@@ -65,7 +65,7 @@ enableGitInfo = false
   organizations = [ { name = "UVSQ/University Paris-Saclay", url = "" } ]
 
   gravatar = false  # Get your avatar from Gravatar.com? (true/false)
-  avatar = "static/img/portrait.jpg"  # Specify an avatar image (in `static/img/` folder) or delete value to disable avatar.
+  #avatar = "static/img/portrait.jpg"  # Specify an avatar image (in `static/img/` folder) or delete value to disable avatar.
   email = "jingwei.zuo.uvsq@gmail.com"
   address = "Office 306-B, Building Descartes, 45 avenue des Etat-Unis, 78000, Versailles, France"
   office_hours = "Monday 10:00 to 13:00 or email for appointment"
