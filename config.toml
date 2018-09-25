@@ -57,15 +57,15 @@ enableGitInfo = false
   font = "default"
 
   # Your details.
-  name = "Lena Smith"
-  role = "Professor of Artificial Intelligence"
+  name = "Jingwei ZUO"
+  role = "Ph.D. student"
 
   # Organizations/Affiliations.
   #   Separate multiple entries with a comma, using the form: `[ {name="Org1", url=""}, {name="Org2", url=""} ]`.
   organizations = [ { name = "Stanford University", url = "" } ]
 
   gravatar = false  # Get your avatar from Gravatar.com? (true/false)
-  avatar = "static/img/photo_Jingwei_ZUO.png"  # Specify an avatar image (in `static/img/` folder) or delete value to disable avatar.
+  avatar = "static/img/portrait.jpg"  # Specify an avatar image (in `static/img/` folder) or delete value to disable avatar.
   email = "jingwei.zuo.uvsq@gmail.com"
   address = "Office 306-B, Building Descartes, 45 avenue des Etat-Unis, 78000, Versailles, France"
   office_hours = "Monday 10:00 to 13:00 or email for appointment"
