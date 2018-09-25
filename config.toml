@@ -232,7 +232,7 @@ enableGitInfo = false
   [[params.social]]
     icon = "linkedin"
     icon_pack = "fab"
-    link = "https://www.linkedin.com/in/jingweizuo/
+    link = "https://www.linkedin.com/in/jingweizuo/"
 
   [[params.social]]
     icon = "google-scholar"
