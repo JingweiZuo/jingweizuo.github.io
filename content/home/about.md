@@ -10,31 +10,29 @@ weight = 5
 # List your academic interests.
 [interests]
   interests = [
-    "Artificial Intelligence",
-    "Computational Linguistics",
-    "Information Retrieval"
+    "Machine Learning",
+    "Streaming data mining",
+    "Distributed computing"
   ]
 
 # List your qualifications (such as academic degrees).
 [[education.courses]]
-  course = "PhD in Artificial Intelligence"
-  institution = "Stanford University"
-  year = 2012
+  course = "M.Sc. in Big Data"
+  institution = "UVSQ / Université Paris-Sacaly, France"
+  year = 2018
 
 [[education.courses]]
-  course = "MEng in Artificial Intelligence"
-  institution = "Massachusetts Institute of Technology"
-  year = 2009
+  course = "Engineer degree in Electronic & Computer Science"
+  institution = "Polytech Sorbonne, France"
+  year = 2017
 
 [[education.courses]]
-  course = "BSc in Artificial Intelligence"
-  institution = "Massachusetts Institute of Technology"
-  year = 2008
+  course = "B.Sc. in Optical & Electronic Information"
+  institution = "Huazhong University of Science & Technology(HUST)"
+  year = 2015
  
 +++
 
 # Biography
 
-Lena Smith is a professor of artificial intelligence at the Stanford AI Lab. Her research interests include distributed robotics, mobile computing and programmable matter. She leads the Robotic Neurobiology group, which develops self-reconfiguring robots, systems of self-organizing robots, and mobile sensor networks.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque elit, tristique placerat feugiat ac, facilisis vitae arcu. Proin eget egestas augue. Praesent ut sem nec arcu pellentesque aliquet. Duis dapibus diam vel metus tempus vulputate. 
+Jingwei Zuo is a first-year Ph.D. student of data mining, under the supervision of Prof.[Karine Zeitouni](http://perso.prism.uvsq.fr/~zeitouni/) and Dr.[Yehia Taher](), with [Ambient Data Accessing and Mining group](https://www.david.uvsq.fr/?team=adam#) of [DAVID Lab](https://www.david.uvsq.fr)(Donnée et Algorithmes pour une Ville Intelligente et Durable), UVSQ, University Paris-Saclay. His research interests include Time Series analytics, streamining data mining and distributed data mining. He received his B.Sc degree in Optical & Electronic Information from Huazhong University of Science & Technology, China in 2015, and his M.Sc. degree in Big Data from UVSQ/University Paris-Saclay, France in 2017, as well as an engineer degree in Electronic&Computer Science from Polytech Sorbonne, France in 2016.
