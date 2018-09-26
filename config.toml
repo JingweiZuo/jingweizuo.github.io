@@ -68,7 +68,6 @@ enableGitInfo = false
   #avatar = "static/img/portrait.jpg"  # Specify an avatar image (in `static/img/` folder) or delete value to disable avatar.
   email = "jingwei.zuo.uvsq@gmail.com"
   address = "Office D-317A, Building Descartes, 45 avenue des Etat-Unis, 78000, Versailles, France"
-  office_hours = "Monday 10:00 to 13:00 or email for appointment"
   phone = "(+33)6 50 13 98 29"
   skype = ""
   telegram = ""
