@@ -16,4 +16,4 @@ list_format = 3
 image = ""
 caption = ""
 +++
-Jingwei Zuo, Karine Zeitouni and Yehia Taher. Exploring Interpretable Features for Large Time Series with SE4TeC, Demo paper, To appear in proceedings of EDBT 2019.
+

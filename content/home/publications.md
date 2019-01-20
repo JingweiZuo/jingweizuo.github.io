@@ -35,4 +35,5 @@ publication_type = "-1"
 # Exclude publications that are shown in the Selected Publications widget?
 exclude_selected = false
 +++
+*Jingwei Zuo*, Karine Zeitouni and Yehia Taher. **Exploring Interpretable Features for Large Time Series with SE4TeC**, Demo paper, (to appear) International Conference on Extending Database Technology (EDBT'19).
 
