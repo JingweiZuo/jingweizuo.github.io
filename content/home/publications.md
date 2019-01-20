@@ -37,5 +37,5 @@ exclude_selected = false
 +++
 Conference:
 
-- *J. Zuo*, K. Zeitouni and Y. Taher. **Exploring Interpretable Features for Large Time Series with SE4TeC**, Demo paper, (to appear) International Conference on Extending Database Technology (EDBT'19), Lisbon, Portugal, 2019. [[preprint]](content/publication/EDBT2019.pdf)
+- *J. Zuo*, K. Zeitouni and Y. Taher. **Exploring Interpretable Features for Large Time Series with SE4TeC**, Demo paper, (to appear) International Conference on Extending Database Technology (EDBT'19), Lisbon, Portugal, 2019. [[preprint]](./EDBT2019.pdf)
 
