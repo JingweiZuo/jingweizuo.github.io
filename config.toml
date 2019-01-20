@@ -65,7 +65,8 @@ enableGitInfo = false
   organizations = [ { name = "UVSQ/University Paris-Saclay", url = "" } ]
 
   gravatar = false  # Get your avatar from Gravatar.com? (true/false)
-  avatar = "static/img/portrait.jpg"  # Specify an avatar image (in `static/img/` folder) or delete value to disable avatar.
+  avatar = "portrait.jpg"  # Specify an avatar image (in `static/img/` folder) or delete value to disable avatar.
+  
   email = "jingwei.zuo@uvsq.fr"
   address = "Office D-312B, Building Descartes, 45 avenue des Etat-Unis, 78000, Versailles, France"
   phone = "(+33)06 50 13 98 29"
@@ -98,7 +99,7 @@ enableGitInfo = false
   #   1: Google Maps
   #   2: OpenStreetMap (Mapnik)
   #   3: OpenStreetMap (Mapbox)
-  map = 1
+  map = 2
   map_api_key = ""
   latitude = "48.812908"
   longitude = "2.148446"
