@@ -64,11 +64,11 @@ enableGitInfo = false
   #   Separate multiple entries with a comma, using the form: `[ {name="Org1", url=""}, {name="Org2", url=""} ]`.
   organizations = [ { name = "UVSQ/University Paris-Saclay", url = "" } ]
 
-  gravatar = false  # Get your avatar from Gravatar.com? (true/false)
-  avatar = "/static/img/portrait.jpg"  # Specify an avatar image (in `static/img/` folder) or delete value to disable avatar.
-  email = "jingwei.zuo@uvsq.com"
-  address = "Office D-317A, Building Descartes, 45 avenue des Etat-Unis, 78000, Versailles, France"
-  phone = "(+33)6 50 13 98 29"
+  gravatar = true  # Get your avatar from Gravatar.com? (true/false)
+  avatar = "static/img/portrait.jpg"  # Specify an avatar image (in `static/img/` folder) or delete value to disable avatar.
+  email = "jingwei.zuo@uvsq.fr"
+  address = "Office D-312B, Building Descartes, 45 avenue des Etat-Unis, 78000, Versailles, France"
+  phone = "(+33)06 50 13 98 29"
   skype = ""
   telegram = ""
 
