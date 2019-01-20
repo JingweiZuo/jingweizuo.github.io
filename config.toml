@@ -66,7 +66,7 @@ enableGitInfo = false
 
   gravatar = false  # Get your avatar from Gravatar.com? (true/false)
   #avatar = "static/img/portrait.jpg"  # Specify an avatar image (in `static/img/` folder) or delete value to disable avatar.
-  email = "jingwei.zuo.uvsq@gmail.com"
+  email = "jingwei.zuo@uvsq.com"
   address = "Office D-317A, Building Descartes, 45 avenue des Etat-Unis, 78000, Versailles, France"
   phone = "(+33)6 50 13 98 29"
   skype = ""
@@ -98,10 +98,10 @@ enableGitInfo = false
   #   1: Google Maps
   #   2: OpenStreetMap (Mapnik)
   #   3: OpenStreetMap (Mapbox)
-  map = 0
+  map = 2
   map_api_key = ""
-  latitude = "37.4275"
-  longitude = "-122.1697"
+  latitude = "48.812908"
+  longitude = "2.148446"
   zoom = 15
 
   # Date and time format (refer to https://sourcethemes.com/academic/docs/customization/#date-format )
