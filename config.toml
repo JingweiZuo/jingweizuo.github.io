@@ -65,7 +65,7 @@ enableGitInfo = false
   organizations = [ { name = "UVSQ/University Paris-Saclay", url = "" } ]
 
   gravatar = false  # Get your avatar from Gravatar.com? (true/false)
-  avatar = "static/img/portrait.jpg"  # Specify an avatar image (in `static/img/` folder) or delete value to disable avatar.
+  avatar = "/static/img/portrait.jpg"  # Specify an avatar image (in `static/img/` folder) or delete value to disable avatar.
   email = "jingwei.zuo@uvsq.com"
   address = "Office D-317A, Building Descartes, 45 avenue des Etat-Unis, 78000, Versailles, France"
   phone = "(+33)6 50 13 98 29"
@@ -226,7 +226,7 @@ enableGitInfo = false
   [[params.social]]
     icon = "envelope"
     icon_pack = "fas"
-    link = "mailto:jingwei.zuo.uvsq@gmail.com"
+    link = "mailto:jingwei.zuo@uvsq.fr"
 
   [[params.social]]
     icon = "linkedin"
