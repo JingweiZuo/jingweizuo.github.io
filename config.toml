@@ -65,7 +65,7 @@ enableGitInfo = false
   organizations = [ { name = "UVSQ/University Paris-Saclay", url = "" } ]
 
   gravatar = false  # Get your avatar from Gravatar.com? (true/false)
-  #avatar = "static/img/portrait.jpg"  # Specify an avatar image (in `static/img/` folder) or delete value to disable avatar.
+  avatar = "static/img/portrait.jpeg"  # Specify an avatar image (in `static/img/` folder) or delete value to disable avatar.
   email = "jingwei.zuo@uvsq.com"
   address = "Office D-317A, Building Descartes, 45 avenue des Etat-Unis, 78000, Versailles, France"
   phone = "(+33)6 50 13 98 29"
@@ -81,7 +81,7 @@ enableGitInfo = false
 
   # Diplay a logo in navigation bar rather than title (optional).
   #   To enable, place an image in `static/img/` and reference its filename below. To disable, set the value to "".
-  logo = ""
+  logo = "static/img/portrait.jpeg"
 
   # Enable/disable map in Contact widget.
   # To show your address on a map in the contact widget, you need to enter your latitude, longitude and choose
@@ -98,7 +98,7 @@ enableGitInfo = false
   #   1: Google Maps
   #   2: OpenStreetMap (Mapnik)
   #   3: OpenStreetMap (Mapbox)
-  map = 2
+  map = 1
   map_api_key = ""
   latitude = "48.812908"
   longitude = "2.148446"
