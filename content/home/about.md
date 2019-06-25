@@ -10,7 +10,7 @@ weight = 5
 # List your academic interests.
 [interests]
   interests = [
- 
+
   	"Time Series mining",
     "Machine Learning",
     "Streaming data mining",
@@ -32,6 +32,7 @@ weight = 5
   course = "B.Sc. in Optical & Elec. Info."
   institution = "Huazhong University of Science & Technology(HUST)"
   year = 2015
+
 +++
 # Bio
 Jingwei Zuo is a first-year Ph.D. student, under the supervision of Prof. [Karine Zeitouni](http://perso.prism.uvsq.fr/~zeitouni/) and Dr. Yehia Taher, with [Ambient Data Accessing and Mining team](https://www.david.uvsq.fr/?team=adam#) of [DAVID Lab](https://www.david.uvsq.fr)(Donnée et Algorithmes pour une Ville Intelligente et Durable), UVSQ, Université Paris-Saclay. His research interests include Time Series analytics, Data Streams mining and distributed algorithm in the context of IoT. He received his B.Sc degree in Optical & Electronic Information from [Huazhong University of Science & Technology](http://english.hust.edu.cn), China in 2015, and his M.Sc. degree in Big Data from UVSQ and University of Paris-Saclay, France in 2018, as well as an engineer degree in Electronic & Computer Science from [Polytech Sorbonne](https://www.polytech.upmc.fr), France in 2017.

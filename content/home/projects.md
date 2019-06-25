@@ -43,3 +43,7 @@ filter_default = 0
 
 +++
 
+#### [PROJECT STREAMOPS - INSTITUT DATAIA](http://dataia.eu/index.php/en/news/streamops-robust-performing-and-easily-scalable-streaming-platform)
+
+- Open Source Platform for Research and Integration of Algorithms for Massive Time Series Flow Analysis
+- The goal of StreamOps is to develop methods and algorithms to consider temporal order in data streams.
