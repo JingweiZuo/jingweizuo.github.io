@@ -37,7 +37,7 @@ exclude_selected = false
 +++
 Conference:
 
-- **J. Zuo**, K. Zeitouni and Y. Taher: "[Incremental and Adaptive Feature Exploration over Time Series Stream](../publication/AALTD2019.pdf)". (Accepted) 4th Workshop on Advanced Analytics and Learning on Temporal Data (AALTD@ECML-PKDD’19), Würzburg, Germany, 2019
+- **J. Zuo**, K. Zeitouni and Y. Taher: "Incremental and Adaptive Feature Exploration over Time Series Stream". (Accepted) 4th Workshop on Advanced Analytics and Learning on Temporal Data (AALTD@ECML-PKDD’19), Würzburg, Germany, 2019
 - **J. Zuo**, K. Zeitouni and Y. Taher: "[ISETS: Incremental Shapelet Extraction from Time Series Stream](../publication/ECML_PKDD2019.pdf)". (Accepted) demo paper, European Conference on Machine Learning and Principles and Practice of Knowledge Discovery in Databases (ECML-PKDD’19), Würzburg, Germany, 2019
 - **J. Zuo**, K. Zeitouni and Y. Taher. "[Exploring Interpretable Features for Large Time Series with SE4TeC](../publication/EDBT2019.pdf)", demo paper, 22nd International Conference on Extending Database Technology (EDBT'19), Lisbon, Portugal, 2019. [[Poster](../publication/EDBT2019_poster.pdf)] 
 
