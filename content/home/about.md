@@ -20,7 +20,7 @@ weight = 5
 # List your qualifications (such as academic degrees).
 [[education.courses]]
   course = "M.Sc. in Big Data"
-  institution = "UVSQ/University of Paris-Sacaly, France"
+  institution = "UVSQ/Université Paris-Saclay, France"
   year = 2018
 
 [[education.courses]]
