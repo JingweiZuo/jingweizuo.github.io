@@ -43,5 +43,5 @@ International Conference:
 
 National Conference: 
 
-- **J. Zuo**, K. Zeitouni and Y. Taher. "Time Series meet Data Streams: Perspectives of the
-  Interdisciplinary Collision and Applications", *PhD symposium*, 35ème Conférence sur la Gestion de Données – Principes, Technologies et Applications (BDA'19), Lyon, France, 2019. 
+- **J. Zuo**, K. Zeitouni and Y. Taher. "[Time Series meet Data Streams: Perspectives of the
+  Interdisciplinary Collision and Applications](../publication/BDA2019.pdf)", *PhD symposium*, 35ème Conférence sur la Gestion de Données – Principes, Technologies et Applications (BDA'19), Lyon, France, 2019. 
