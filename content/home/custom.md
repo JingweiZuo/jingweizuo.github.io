@@ -20,7 +20,7 @@ count = 10
 Organizing committees:
 
 - [MDM 2020](http://mdmconferences.org/mdm2020/) Web Chair of the 21st IEEE Mobile Data Management Conference 
-- [JDSE 2019](https://jdse-paris.github.io/jDSE2019) Organization committee of the 4th Paris-Saclay Junior Conference on Data Science and Engineering 
+- [JDSE 2019](https://jdse-paris.github.io/jDSE2019) Junior organization committee of the 4th Paris-Saclay Junior Conference on Data Science and Engineering 
 
 Program committees: 
 
