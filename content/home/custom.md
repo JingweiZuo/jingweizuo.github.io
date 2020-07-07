@@ -4,7 +4,7 @@ widget = "custom"
 active = true
 date = 2016-04-20T00:00:00
 
-title = "Service"
+title = "Community Service"
 subtitle = ""
 
 # 
@@ -19,8 +19,8 @@ count = 10
 
 Organizing committees:
 
-- [MDM2020](http://mdmconferences.org/mdm2020/) Web Chair of the 21st IEEE Mobile Data Management Conference 
-- [JDSE2019](https://jdse-paris.github.io/jDSE2019) Organization committee of the 4th Paris-Saclay Junior Conference on Data Science and Engineering 
+- [MDM 2020](http://mdmconferences.org/mdm2020/) Web Chair of the 21st IEEE Mobile Data Management Conference 
+- [JDSE 2019](https://jdse-paris.github.io/jDSE2019) Organization committee of the 4th Paris-Saclay Junior Conference on Data Science and Engineering 
 
 Program committees: 
 
