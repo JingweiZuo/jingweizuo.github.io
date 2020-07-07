@@ -272,7 +272,7 @@ enableGitInfo = false
 
 [[menu.main]]
   name = "Service"
-  url = "#Service"
+  url = "#service"
   weight = 3
 
 [[menu.main]]
