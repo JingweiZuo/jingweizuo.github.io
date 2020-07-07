@@ -24,7 +24,7 @@ Organizing committees:
 
 Program committees: 
 
-- [ECML-PKDD 2020](https://ecmlpkdd2020.net/)
+- [ECML-PKDD 2020](https://ecmlpkdd2020.net/) The European Conference on Machine Learning and Principles and Practice of Knowledge Discovery in Databases
 
 Reviewing:
 
