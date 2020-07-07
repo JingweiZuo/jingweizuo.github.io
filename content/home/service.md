@@ -1,7 +1,7 @@
 +++
 # Recent Publications widget.
 # This widget displays recent publications from `content/publication/`.
-widget = "service"
+widget = "Service"
 active = true
 date = 2016-04-20T00:00:00
 
@@ -48,4 +48,3 @@ Reviewing:
 
 - IEEE International Conference on Data Engineering [ICDE 2021](http://www.icde2021.gr/)
 - IEEE International Conference on Data Science and Advanced Analytics [DSAA 2020](http://dsaa2020.dsaa.co/)
-
