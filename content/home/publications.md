@@ -35,7 +35,9 @@ publication_type = "-1"
 # Exclude publications that are shown in the Selected Publications widget?
 exclude_selected = false
 +++
-International Conference:
+International Conference & Workshop:
+
+- M. Abboud, H. El Hafyani, **J. Zuo**, K. Zeitouni and Y. Taher: "Micro-environment Recognition in the context of Environmental Crowdsensing", the 4th Big Mobility Data Analytics workshop (BMDA@EDBT'21), Nicosia, Cyprus, 2021
 
 - **J. Zuo**, K. Zeitouni and Y. Taher: "[Incremental and Adaptive Feature Exploration over Time Series Stream](https://ieeexplore.ieee.org/document/9005660)". (regular paper) IEEE International Conference on Big Data (IEEE BigData 2019), Los Angeles, CA, USA, 2019
 - **J. Zuo**, K. Zeitouni and Y. Taher: "[ISETS: Incremental Shapelet Extraction from Time Series Stream](../publication/ECML_PKDD2019.pdf)"，(demo paper) European Conference on Machine Learning and Principles and Practice of Knowledge Discovery in Databases (ECML-PKDD’19), Würzburg, Germany, 2019
