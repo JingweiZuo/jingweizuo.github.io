@@ -11,10 +11,10 @@ weight = 5
 [interests]
   interests = [
 
-  	"Time Series mining",
-    "Machine Learning",
-    "Streaming data mining",
-    "Distributed computing"
+​    "Time Series mining",
+​    "Machine Learning",
+​    "Streaming data mining",
+​    "Spatio-Temporal data"
   ]
 
 # List your qualifications (such as academic degrees).
@@ -35,5 +35,5 @@ weight = 5
 
 +++
 # Bio
-Jingwei Zuo is currently a Ph.D. student under the supervision of Prof. [Karine Zeitouni](https://pages.david.uvsq.fr/kzeitouni/) and Dr. Yehia Taher, with [Ambient Data Accessing and Mining team](https://www.david.uvsq.fr/?team=adam#) of [DAVID Lab](https://www.david.uvsq.fr)(Donnée et Algorithmes pour une Ville Intelligente et Durable), UVSQ, Université Paris-Saclay. His research interests include Time Series analytics, Data Streams mining and distributed algorithm in the context of IoT. He received his B.Sc degree in Optical & Electronic Information from [Huazhong University of Science & Technology](http://english.hust.edu.cn), China in 2015, and his M.Sc. degree in Big Data from UVSQ and University of Paris-Saclay, France in 2018, as well as an engineer degree in Electronic & Computer Science from [Polytech Sorbonne](https://www.polytech.upmc.fr), France in 2017.
+Jingwei Zuo is currently a Ph.D. student under the supervision of Prof. [Karine Zeitouni](https://pages.david.uvsq.fr/kzeitouni/) and Dr. Yehia Taher, with [Ambient Data Accessing and Mining team](https://www.david.uvsq.fr/?team=adam#) of [DAVID Lab](https://www.david.uvsq.fr)(Donnée et Algorithmes pour une Ville Intelligente et Durable), UVSQ, Université Paris-Saclay. His research interests include Time Series analytics, Data Streams mining and Spatio-Temporal data analysis in the context of IoT. He received his B.Sc degree in Optical & Electronic Information from [Huazhong University of Science & Technology](http://english.hust.edu.cn), China in 2015, and his M.Sc. degree in Big Data from UVSQ and University of Paris-Saclay, France in 2018, as well as an engineer degree in Electronic & Computer Science from [Polytech Sorbonne](https://www.polytech.upmc.fr), France in 2017.
 
