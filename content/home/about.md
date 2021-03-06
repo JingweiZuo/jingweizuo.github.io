@@ -11,10 +11,10 @@ weight = 5
 [interests]
   interests = [
 
-​    "Time Series mining",
-​    "Machine Learning",
-​    "Streaming data mining",
-​    "Spatio-Temporal Forecasting"
+   "Time Series mining",
+    "Machine Learning",
+    "Streaming data mining",
+    "Spatio-Temporal Forecasting"
   ]
 
 # List your qualifications (such as academic degrees).
