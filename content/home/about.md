@@ -14,7 +14,7 @@ weight = 5
 ​    "Time Series mining",
 ​    "Machine Learning",
 ​    "Streaming data mining",
-​    "Spatio-Temporal data"
+​    "Spatio-Temporal Forecasting"
   ]
 
 # List your qualifications (such as academic degrees).
