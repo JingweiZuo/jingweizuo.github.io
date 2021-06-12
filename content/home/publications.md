@@ -37,7 +37,6 @@ exclude_selected = false
 +++
 Under Review:
 
-- **J. Zuo**, K. Zeitouni and Y. Taher: "**SMATE: Semi-Supervised Spatio-Temporal Representation Learning on Multivariate Time Series**", 2021
 - H. El Hafyani, M. Abboud,  **J. Zuo**, K. Zeitouni and Y. Taher: "**Tell Me What Air You Sense/Breath, I Tell You Where You Are**", 2021
 
 International Conference & Workshop:
