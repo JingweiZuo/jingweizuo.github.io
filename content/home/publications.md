@@ -35,14 +35,10 @@ publication_type = "-1"
 # Exclude publications that are shown in the Selected Publications widget?
 exclude_selected = false
 +++
-Under Review:
-
-- H. El Hafyani, M. Abboud,  **J. Zuo**, K. Zeitouni and Y. Taher: "**Tell Me What Air You Sense/Breath, I Tell You Where You Are**", 2021
-
 International Conference & Workshop:
 
-- M. Abboud, H. El Hafyani, **J. Zuo**, K. Zeitouni and Y. Taher: "**Micro-environment Recognition in the context of Environmental Crowdsensing**",in Big Mobility Data Analytics with EDBT 2021 (BMDA'21)
-
+- H. El Hafyani, M. Abboud,  **J. Zuo**, K. Zeitouni and Y. Taher: "**Tell Me What Air You Sense/Breath, I Tell You Where You Are**", (demo) International Symposium on Spatial and Temporal Databases 2021 (SSTD'21)
+- M. Abboud, H. El Hafyani, **J. Zuo**, K. Zeitouni and Y. Taher: "**Micro-environment Recognition in the context of Environmental Crowdsensing**", in Big Mobility Data Analytics with EDBT 2021 (BMDA'21)
 - **J. Zuo**, K. Zeitouni and Y. Taher: "[Incremental and Adaptive Feature Exploration over Time Series Stream](https://ieeexplore.ieee.org/document/9005660)". (regular paper) IEEE International Conference on Big Data (IEEE BigData 2019), Los Angeles, CA, USA, 2019
 - **J. Zuo**, K. Zeitouni and Y. Taher: "[ISETS: Incremental Shapelet Extraction from Time Series Stream](../publication/ECML_PKDD2019.pdf)"，(demo paper) European Conference on Machine Learning and Principles and Practice of Knowledge Discovery in Databases (ECML-PKDD’19), Würzburg, Germany, 2019
 - **J. Zuo**, K. Zeitouni and Y. Taher. "[Exploring Interpretable Features for Large Time Series with SE4TeC](https://openproceedings.org/2019/conf/edbt/EDBT19_paper_353.pdf)", (demo paper) 22nd International Conference on Extending Database Technology (EDBT'19), Lisbon, Portugal, 2019. [[Poster](../publication/EDBT2019_poster.pdf)] 
