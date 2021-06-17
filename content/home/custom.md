@@ -30,4 +30,5 @@ Reviewing:
 
 - [ICDE 2021](http://www.icde2021.gr/) IEEE International Conference on Data Engineering 
 - [AAAI 2021](https://aaai.org/Conferences/AAAI-21/) AAAI Conference on Artificial Intelligence
+- [SSTD 2021](https://sstd2021.github.io/) International Symposium on Spatial and Temporal Databases
 - [DSAA 2020](http://dsaa2020.dsaa.co/) IEEE International Conference on Data Science and Advanced Analytics 
