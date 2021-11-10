@@ -37,7 +37,7 @@ exclude_selected = false
 +++
 International Conference & Workshop:
 
-- **J. Zuo**, K. Zeitouni and Y. Taher: "[SMATE: Semi-Supervised Spatio-Temporal Representation Learning on Multivariate Time Series](https://arxiv.org/abs/2110.00578)", to appear. *2021 IEEE International Conference on Data Mining* (***ICDM'21***). [preprint](https://arxiv.org/pdf/2110.00578.pdf)
+- **J. Zuo**, K. Zeitouni and Y. Taher: "[SMATE: Semi-Supervised Spatio-Temporal Representation Learning on Multivariate Time Series](https://arxiv.org/abs/2110.00578v2)", to appear. *2021 IEEE International Conference on Data Mining* (***ICDM'21***). [preprint](https://arxiv.org/pdf/2110.00578v2.pdf), [GitHub](https://github.com/JingweiZuo/SMATE)
 - H. El Hafyani, M. Abboud,  **J. Zuo**, K. Zeitouni and Y. Taher: "[Tell Me What Air You Breath, I Tell You Where You Are](https://dl.acm.org/doi/10.1145/3469830.3470914)", (demo) *2021 International Symposium on Spatial and Temporal Databases* (***SSTD'21***)
 - M. Abboud, H. El Hafyani, **J. Zuo**, K. Zeitouni and Y. Taher: "[Micro-environment Recognition in the context of Environmental Crowdsensing](http://ceur-ws.org/Vol-2841/BMDA_9.pdf)", in *Big Mobility Data Analytics with EDBT 2021 (BMDA'21)*
 - **J. Zuo**, K. Zeitouni and Y. Taher: "[Incremental and Adaptive Feature Exploration over Time Series Stream](https://ieeexplore.ieee.org/document/9005660)". (regular paper) *2019 IEEE International Conference on Big Data* (***BigData'19***), Los Angeles, CA, USA, 2019. [preprint](https://hal.archives-ouvertes.fr/hal-02391802/document)
