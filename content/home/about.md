@@ -11,33 +11,33 @@ weight = 5
 [interests]
   interests = [
 
-   "Time Series mining",
-    "Machine Learning",
-    "Streaming data mining",
-    "Spatio-Temporal Forecasting"
+​    "Machine Learning",
+​    "Time series mining ",
+​    "Streaming data mining",
+​    "Spatio-Temporal Forecasting"
   ]
 
 # List your qualifications (such as academic degrees).
 [[education.courses]]
-  course = "M.Sc. in Big Data"
+  course = "M.Sc. in Data Science"
   institution = "UVSQ/Université Paris-Saclay, France"
   year = 2018
 
 [[education.courses]]
-  course = "Engineer degree in Elec. & CS"
+  course = "Engineer degree in Computer Science"
   institution = "Polytech Sorbonne, France"
   year = 2017
 
 [[education.courses]]
   course = "B.Sc. in Optical & Elec. Info."
-  institution = "Huazhong University of Science & Technology(HUST)"
+  institution = "Huazhong University of Science & Technology (HUST)"
   year = 2015
 
 
 +++
 # About Me
 
-Jingwei Zuo is currently a Ph.D. student under the supervision of Prof. [Karine Zeitouni](https://pages.david.uvsq.fr/kzeitouni/) and Dr. Yehia Taher, with [Ambient Data Accessing and Mining team](https://www.david.uvsq.fr/?team=adam#) of [DAVID Lab](https://www.david.uvsq.fr)(Donnée et Algorithmes pour une Ville Intelligente et Durable), UVSQ, Université Paris-Saclay. His research interests include Time Series analytics, Data Streams mining and Spatio-Temporal data analysis in the context of IoT. He received his B.Sc degree in Optical & Electronic Information from [Huazhong University of Science & Technology](http://english.hust.edu.cn), China in 2015, and his M.Sc. degree in Big Data from UVSQ and University of Paris-Saclay, France in 2018, as well as an engineer degree in Electronic & Computer Science from [Polytech Sorbonne](https://www.polytech.upmc.fr) & [Sorbonne Université](https://www.sorbonne-universite.fr/), France in 2017. 
+I am currently a Ph.D. student under the supervision of Prof. [Karine Zeitouni](https://pages.david.uvsq.fr/kzeitouni/) and Dr. Yehia Taher, with [Ambient Data Accessing and Mining team](https://www.david.uvsq.fr/?team=adam#) of [DAVID Lab](https://www.david.uvsq.fr), UVSQ, [Université Paris-Saclay](https://www.universite-paris-saclay.fr/en). I received my B.Sc degree in Optical & Electronic Information from [Huazhong University of Science & Technology](http://english.hust.edu.cn), China in 2015, and my M.Sc. degree in Data Science from UVSQ and [University of Paris-Saclay](https://www.universite-paris-saclay.fr/en), France in 2018, as well as an engineer degree in Computer Science from [Polytech Sorbonne](https://www.polytech.sorbonne-universite.fr/) & [Sorbonne Université](https://www.sorbonne-universite.fr/), France in 2017. My research interests include Time Series analytics, Data Streams mining and Spatio-Temporal data analysis in the context of IoT. 
 
 ### Curriculum vitae
 
