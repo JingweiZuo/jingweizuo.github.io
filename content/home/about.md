@@ -41,4 +41,7 @@ Jingwei Zuo is currently a Ph.D. student under the supervision of Prof. [Karine 
 
 ### Curriculum vitae
 
-Here is my [CV (short)](./CV_Jingwei_Zuo_PhD_short.pdf), [CV (long)](./CV_Jingwei_Zuo_PhD_long.pdf)
+Here is my [CV (short)](./home/CV_Jingwei_Zuo_PhD_short.pdf), [CV (long)](./home/CV_Jingwei_Zuo_PhD_long.pdf).
+
+:star::star:**I am currently on the job market, thank you for any proposals.** :star::star: 
+
