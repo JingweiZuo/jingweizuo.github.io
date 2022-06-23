@@ -10,7 +10,7 @@ weight = 5
 # List your academic interests.
 [interests]
   interests = [
-	"Machine Learning"
+	"Machine Learning",
 	"Time series mining ",
 	"Streaming data mining",
 	"Spatio-Temporal Forecasting"
