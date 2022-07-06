@@ -35,7 +35,12 @@ publication_type = "-1"
 # Exclude publications that are shown in the Selected Publications widget?
 exclude_selected = false
 +++
-International Conference & Workshop:
+Journals:
+
+- **J. Zuo**, K. Zeitouni, Y. Taher, S. G. Rodriguez: "Graph Convolutional Networks for Traffic Forecasting with Missing Values", under review
+- H. El Hafyani, M. Abboud, **J. Zuo**, K. Zeitouni and Y. Taher: "Learning the Micro-environment from Rich Trajectories in the context of Mobile Crowd Sensing - Application to Air Quality Monitoring", accepted by ***GeoInformatica***, Springer
+
+International Conferences & Workshops:
 
 - **J. Zuo**, K. Zeitouni and Y. Taher: "[SMATE: Semi-Supervised Spatio-Temporal Representation Learning on Multivariate Time Series](https://ieeexplore.ieee.org/document/9679137)", *2021 IEEE International Conference on Data Mining* (***ICDM'21***). [preprint](https://arxiv.org/pdf/2110.00578v2.pdf), [full version](../publication/SMATE_ICDM2021.pdf), [code](https://github.com/JingweiZuo/SMATE), [slides](../publication/SMATE_ICDM21_slides.pdf)
 - H. El Hafyani, M. Abboud,  **J. Zuo**, K. Zeitouni and Y. Taher: "[Tell Me What Air You Breath, I Tell You Where You Are](https://dl.acm.org/doi/10.1145/3469830.3470914)", (demo) *2021 International Symposium on Spatial and Temporal Databases* (***SSTD'21***)
