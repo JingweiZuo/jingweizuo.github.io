@@ -37,8 +37,8 @@ exclude_selected = false
 +++
 Journals:
 
-- **J. Zuo**, K. Zeitouni, Y. Taher, S. G. Rodriguez: "Graph Convolutional Networks for Traffic Forecasting with Missing Values", under review
-- H. El Hafyani, M. Abboud, **J. Zuo**, K. Zeitouni and Y. Taher: "Learning the Micro-environment from Rich Trajectories in the context of Mobile Crowd Sensing - Application to Air Quality Monitoring", accepted by ***GeoInformatica***, Springer
+- **J. Zuo**, K. Zeitouni, Y. Taher, S. G. Rodriguez: "**Graph Convolutional Networks for Traffic Forecasting with Missing Values**", under review
+- H. El Hafyani, M. Abboud, **J. Zuo**, K. Zeitouni and Y. Taher: "**Learning the Micro-environment from Rich Trajectories in the context of Mobile Crowd Sensing - Application to Air Quality Monitoring**", to appear in ***GeoInformatica***, Springer (2022)
 
 International Conferences & Workshops:
 
