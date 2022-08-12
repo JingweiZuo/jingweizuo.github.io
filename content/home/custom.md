@@ -28,6 +28,8 @@ Program committees:
 
 Reviewing:
 
+- [SIGSPATIAL 2022](https://sigspatial2022.sigspatial.org/) ACM International Conference on Advances in Geographic Information Systems
+
 - [ICDE 2021](http://www.icde2021.gr/) IEEE International Conference on Data Engineering 
 - [AAAI 2021](https://aaai.org/Conferences/AAAI-21/) AAAI Conference on Artificial Intelligence
 - [SSTD 2021](https://sstd2021.github.io/) International Symposium on Spatial and Temporal Databases
