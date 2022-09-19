@@ -100,8 +100,8 @@ enableGitInfo = false
   #   3: OpenStreetMap (Mapbox)
   map = 2
   map_api_key = ""
-  latitude = "48.812908"
-  longitude = "2.148446"
+  latitude = "24.437549699294266"
+  longitude = "54.61384699742013"
   zoom = 15
 
   # Date and time format (refer to https://sourcethemes.com/academic/docs/customization/#date-format )
