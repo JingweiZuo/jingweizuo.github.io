@@ -18,7 +18,7 @@ weight = 5
 
 # List your qualifications (such as academic degrees).
 [[education.courses]]
-  course = "P.hD. in Machine Learning"
+  course = "Ph.D. in Machine Learning"
   institution = "University of Paris-Saclay, France"
   year = 2022
 
