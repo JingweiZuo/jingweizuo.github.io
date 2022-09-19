@@ -58,18 +58,17 @@ enableGitInfo = false
 
   # Your details.
   name = "Jingwei ZUO"
-  role = "Ph.D. student"
+  role = "Machine Learning Researcher"
 
   # Organizations/Affiliations.
   #   Separate multiple entries with a comma, using the form: `[ {name="Org1", url=""}, {name="Org2", url=""} ]`.
-  organizations = [ { name = "UVSQ, Université Paris-Saclay", url = "https://www.universite-paris-saclay.fr/en" } ]
+  organizations = [ { name = "Technology Innovation Institute (TII)", url = "https://www.tii.ae/" } ]
 
   gravatar = false  # Get your avatar from Gravatar.com? (true/false)
   avatar = "portrait.jpg"  # Specify an avatar image (in `static/img/` folder) or delete value to disable avatar.
   
-  email = "jingwei.zuo@uvsq.fr"
-  address = "Office D-317A, Building Descartes, UVSQ, 45 avenue des Etat-Unis, 78000, Versailles, France"
-  phone = "(+33)06 50 13 98 29"
+  email = "jingwei.zuo@tii.ae"
+  address = "PO Box: 9639, Masdar City, Abu Dhabi, UAE"
   skype = ""
   telegram = ""
 
