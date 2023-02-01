@@ -37,11 +37,12 @@ exclude_selected = false
 +++
 Journals:
 
-- **J. Zuo**, K. Zeitouni, Y. Taher, S. G. Rodriguez: "**Graph Convolutional Networks for Traffic Forecasting with Missing Values**", accepted by **Data Mining and Knowledge Discovery (DMKD)**, Springer 
-- H. El Hafyani, M. Abboud, **J. Zuo**, K. Zeitouni and Y. Taher: "**Learning the Micro-environment from Rich Trajectories in the context of Mobile Crowd Sensing - Application to Air Quality Monitoring**", to appear in ***GeoInformatica***, Springer (2022)
+- **J. Zuo**, K. Zeitouni, Y. Taher, S. G. Rodriguez: "[Graph Convolutional Networks for Traffic Forecasting with Missing Values](https://link.springer.com/article/10.1007/s10618-022-00903-7)", *Data Mining and Knowledge Discovery* (**DMKD'22**), Springer 
+- H. El Hafyani, M. Abboud, **J. Zuo**, K. Zeitouni and Y. Taher: "[Learning the Micro-environment from Rich Trajectories in the context of Mobile Crowd Sensing - Application to Air Quality Monitoring](https://link.springer.com/article/10.1007/s10707-022-00471-4)", **GeoInformatica**, Springer (2022). [preprint](https://www.researchgate.net/publication/363696724_Learning_the_micro-environment_from_rich_trajectories_in_the_context_of_mobile_crowd_sensing)
 
 International Conferences & Workshops:
 
+- **J. Zuo**, G. Arvanitakis and H. Hacid: "**On Handling Catastrophic Forgetting for Incremental Learning of Human Physical Activity on the Edge**", (Industrial & Application Track) to appear in *26th International Conference on Extending Database Technology* (***EDBT'23***)
 - **J. Zuo**, K. Zeitouni and Y. Taher: "[SMATE: Semi-Supervised Spatio-Temporal Representation Learning on Multivariate Time Series](https://ieeexplore.ieee.org/document/9679137)", *2021 IEEE International Conference on Data Mining* (***ICDM'21***). [preprint](https://arxiv.org/pdf/2110.00578v2.pdf), [full version](../publication/SMATE_ICDM2021.pdf), [code](https://github.com/JingweiZuo/SMATE), [slides](../publication/SMATE_ICDM21_slides.pdf)
 - H. El Hafyani, M. Abboud,  **J. Zuo**, K. Zeitouni and Y. Taher: "[Tell Me What Air You Breath, I Tell You Where You Are](https://dl.acm.org/doi/10.1145/3469830.3470914)", (demo) *2021 International Symposium on Spatial and Temporal Databases* (***SSTD'21***)
 - M. Abboud, H. El Hafyani, **J. Zuo**, K. Zeitouni and Y. Taher: "[Micro-environment Recognition in the context of Environmental Crowdsensing](http://ceur-ws.org/Vol-2841/BMDA_9.pdf)", in *Big Mobility Data Analytics with EDBT 2021 (BMDA'21)*
