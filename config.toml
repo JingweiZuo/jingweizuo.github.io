@@ -226,7 +226,7 @@ enableGitInfo = false
   [[params.social]]
     icon = "envelope"
     icon_pack = "fas"
-    link = "mailto:jingwei.zuo@uvsq.fr"
+    link = "mailto:jingwei.zuo@tii.ae"
 
   [[params.social]]
     icon = "linkedin"
@@ -270,24 +270,29 @@ enableGitInfo = false
   weight = 1
 
 [[menu.main]]
-  name = "Publications"
-  url = "#publications"
+  name = "News"
+  url = "#news"
   weight = 2
 
 [[menu.main]]
-  name = "Service"
-  url = "#custom"
+  name = "Publications"
+  url = "#publications"
   weight = 3
+
+[[menu.main]]
+  name = "Service"
+  url = "#service"
+  weight = 4
   
 [[menu.main]]
   name = "Projects"
   url = "#projects"
-  weight = 4
+  weight = 5
 
 [[menu.main]]
   name = "Contact"
   url = "#contact"
-  weight = 5
+  weight = 6
 
 # Link to a PDF of your resume/CV from the menu.
 # To enable, copy your resume/CV to `static/files/cv.pdf` and uncomment the lines below.
