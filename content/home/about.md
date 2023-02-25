@@ -12,7 +12,7 @@ weight = 5
   interests = [
   "Edge AI",
   "Incremental Learning",
-  "Federated/Distributed Learning",
+  "Federated Learning",
   "Large Generative Models",
   "Time Series Mining",
 	"Machine Learning"
