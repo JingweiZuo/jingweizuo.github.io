@@ -8,7 +8,7 @@ title = "News"
 subtitle = ""
 
 # 
-weight = 30
+weight = 10
 
 # 
 count = 10
