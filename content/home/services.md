@@ -29,6 +29,7 @@ Program committees:
 
 Reviewing:
 
+- [Artif. Intell. Rev.](https://www.springer.com/journal/10462) Artificial Intelligence Review
 - [JBHI](https://www.embs.org/jbhi/) IEEE Journal of Biomedical and Health Informatics
 - [SIGSPATIAL 2022](https://sigspatial2022.sigspatial.org/) ACM International Conference on Advances in Geographic Information Systems
 - [ICDE 2021](http://www.icde2021.gr/) IEEE International Conference on Data Engineering 
