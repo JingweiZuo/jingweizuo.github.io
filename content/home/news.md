@@ -16,6 +16,7 @@ weight = 10
 list_format = 0
 +++
 
+- (2023.08) Glad to receive the [IEEE CIS “Industry Early Career” Travel Grant](https://cis.ieee.org/activities/membership-activities/travel-grants), related to [DSAA 2023](https://conferences.sigappfr.org/dsaa2023/).
 - (2023.07) Two papers got accepted by [DSAA 2023](https://conferences.sigappfr.org/dsaa2023/): one on *Edge AI* for [Incremental Human Activity Learning on the Edge](https://arxiv.org/pdf/2308.11691.pdf), another on *Spatio-temporal data analysis* for [Air Quality Forecasting with Expandable Graph Neural Networks](https://arxiv.org/pdf/2307.15916.pdf).
 - (2023.06) We released [PurpleAirSF](https://github.com/JingweiZuo/PurpleAirSF), a Ready-to-Use Dataset for *Realistic Air Quality Forecasting*, check our preprint [here](https://arxiv.org/pdf/2306.13948.pdf).
 - (2023.01) One paper is accepted by [EDBT 2023](http://edbticdt2023.cs.uoi.gr/?contents=main.html) on *Edge AI* for [handling the Catastrophic Forgetting issue in Incremental Edge Learning](https://openproceedings.org/2023/conf/edbt/3-paper-155.pdf), check our preprint [here](https://arxiv.org/pdf/2302.09310.pdf)!
