@@ -24,14 +24,15 @@ Organizing committees:
 
 Program committees: 
 
+- [CIKM 2023](https://cikm2023.github.io/) ACM International Conference on Information and Knowledge Management
 - [ECML-PKDD 2020](https://ecmlpkdd2020.net/) The European Conference on Machine Learning and Principles and Practice of Knowledge Discovery in Databases
 
 Reviewing:
 
+- [Inf. Sci.](https://www.sciencedirect.com/journal/information-sciences) Information Sciences
+- [Artif. Intell. Rev.](https://www.springer.com/journal/10462) Artificial Intelligence Review
 - [JBHI](https://www.embs.org/jbhi/) IEEE Journal of Biomedical and Health Informatics
-
 - [SIGSPATIAL 2022](https://sigspatial2022.sigspatial.org/) ACM International Conference on Advances in Geographic Information Systems
-
 - [ICDE 2021](http://www.icde2021.gr/) IEEE International Conference on Data Engineering 
 - [AAAI 2021](https://aaai.org/Conferences/AAAI-21/) AAAI Conference on Artificial Intelligence
 - [SSTD 2021](https://sstd2021.github.io/) International Symposium on Spatial and Temporal Databases
