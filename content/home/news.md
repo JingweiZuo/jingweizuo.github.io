@@ -16,7 +16,7 @@ weight = 10
 list_format = 0
 +++
 
-- (2024.02) One research paper is accepted by [PAKDD 2024](https://pakdd2024.org/) on *GNNs*, with application to Label Graph Modeling on Human Activity Recognitions*, paper is coming soon.
+- (2024.02) One research paper is accepted by [PAKDD 2024](https://pakdd2024.org/) on *GNNs*, with application to *Label Graph Modeling on Human Activity Recognitions*, paper is coming soon.
 - (2024.01) One demo paper is accepted by [EDBT 2024](https://dastlab.github.io/edbticdt2024/) on *Personalized Privacy-Preserving Edge AI*, check our preprint [here](https://arxiv.org/pdf/2402.07180.pdf)!
 - (2023.09) The [PurpleAirSF](https://arxiv.org/pdf/2306.13948.pdf) dataset paper got accepted by [SIGSPATIAL 2023](https://sigspatial2023.sigspatial.org/), check the dataset [here](https://github.com/JingweiZuo/PurpleAirSF).
 - (2023.08) Glad to receive the <span style="color:red">IEEE CIS “Industry Early Career” Travel Grant</span>, related to [DSAA 2023](https://conferences.sigappfr.org/dsaa2023/).
