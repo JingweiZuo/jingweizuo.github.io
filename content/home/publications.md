@@ -42,7 +42,7 @@ Journals:
 
 International Conferences & Workshops:
 
-- **J. Zuo** and H. Hacid: "***Re-thinking Human Activity Recognition with Hierarchy-aware Label Relationship Modeling***", *28th Pacific-Asia Conference on Knowledge Discovery and Data Mining* (***PAKDD'24***).
+- **J. Zuo** and H. Hacid: "[Re-thinking Human Activity Recognition with Hierarchy-aware Label Relationship Modeling]([here](https://arxiv.org/pdf/2403.05557.pdf))", *28th Pacific-Asia Conference on Knowledge Discovery and Data Mining* (***PAKDD'24***).
 - **J. Zuo**, G. Arvanitakis, M. Ndhlovu and H. Hacid: "[MAGNETO: Edge AI for Human Activity Recognition - Privacy and Personalization](https://arxiv.org/pdf/2402.07180.pdf)", *27th International Conference on Extending Database Technology* (***EDBT'24***), Paestum, Italy, 2024.
 - **J. Zuo**, W. Li, M. Baldo and H. Hacid: "[Unleashing Realistic Air Quality Forecasting: Introducing the Ready-to-Use PurpleAirSF Dataset](https://dl.acm.org/doi/10.1145/3589132.3625575)", ***ACM SIGSPATIAL'23***, Hamburg, Germany. [preprint](https://arxiv.org/pdf/2306.13948.pdf), [dataset](https://github.com/JingweiZuo/PurpleAirSF).
 - G. Arvanitakis, **J. Zuo**, M. Ndhlovu and H. Hacid: "[Practical Insights on Incremental Learning of New Human Physical Activity on the Edge](https://ieeexplore.ieee.org/document/10302601/)", ***IEEE DSAA'23***, Thessaloniki, Greece, 2023. [preprint](https://arxiv.org/pdf/2308.11691.pdf) 
