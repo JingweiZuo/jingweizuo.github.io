@@ -25,11 +25,12 @@ Organizing committees:
 Program committees: 
 
 - [ECAI 2024](https://www.ecai2024.eu/) European Conference on Artificial Intelligence
-- [CIKM 2023](https://cikm2023.github.io/) ACM International Conference on Information and Knowledge Management
+- [CIKM 2023](https://cikm2023.github.io/), [2024](https://cikm2024.org/) ACM International Conference on Information and Knowledge Management
 - [ECML-PKDD 2020](https://ecmlpkdd2020.net/) The European Conference on Machine Learning and Principles and Practice of Knowledge Discovery in Databases
 
 Reviewing:
 
+- [TKDE](https://www.computer.org/csdl/journal/tk/about/14395) IEEE Transactions on Knowledge and Data Engineering
 - [TheWebConf 2024](https://www2024.thewebconf.org/) The ACM Web Conference 2024
 - [Inf. Sci.](https://www.sciencedirect.com/journal/information-sciences) Information Sciences
 - [Artif. Intell. Rev.](https://www.springer.com/journal/10462) Artificial Intelligence Review
