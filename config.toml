@@ -58,7 +58,7 @@ enableGitInfo = false
 
   # Your details.
   name = "Jingwei ZUO"
-  role = "Researcher"
+  role = "Senior Researcher"
 
   # Organizations/Affiliations.
   #   Separate multiple entries with a comma, using the form: `[ {name="Org1", url=""}, {name="Org2", url=""} ]`.
@@ -284,15 +284,15 @@ enableGitInfo = false
   url = "#services"
   weight = 4
 
-[[menu.main]]
-  name = "Projects"
-  url = "#projects"
-  weight = 5
+#[[menu.main]]
+#  name = "Projects"
+#  url = "#projects"
+#  weight = 5
 
 [[menu.main]]
   name = "Contact"
   url = "#contact"
-  weight = 6
+  weight = 5
 
 # Link to a PDF of your resume/CV from the menu.
 # To enable, copy your resume/CV to `static/files/cv.pdf` and uncomment the lines below.
