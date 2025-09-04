@@ -37,4 +37,6 @@ exclude_selected = false
 +++
 Preprint:
 
+- **J. Zuo**, M. Velikanov, I. Chahed, Y. Belkada, D. Eddine Rhaiem, G. Kunsch, et al.: "[Falcon-H1: A Family of Hybrid-Head Language Models Redefining Efficiency and Performance](https://arxiv.org/abs/2507.22448)", arXiv'25
+- M. Yagoubi, Y. Dahou, B. Mokeddem, Y. Belkada, P. H. Le-Khac, BB. El Amel Boussaha, R. Alami, **Jingwei Zuo**, D. Marsili, M. Farooq, M. Lalmas, G. Gkioxari, P. Gallinari, P. Torr, H. Hacid: "[NeurIPS 2025 E2LM Competition : Early Training Evaluation of Language Models ](https://arxiv.org/abs/2506.07731)", arXiv'25
 - **J. Zuo**, M. Velikanov, D. Eddine Rhaiem, I. Chahed, Y. Belkada, G. Kunsch and H. Hacid: "[Falcon Mamba: The First Competitive Attention-free 7B Language Model](https://arxiv.org/pdf/2410.05355)", arXiv'24
