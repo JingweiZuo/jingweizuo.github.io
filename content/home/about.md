@@ -43,5 +43,6 @@ We're recruiting LLM research interns (and a small number of full-time roles), I
 
 - [Research interns - LLMs](../post/Intern_LLMs_2025.pdf)
 - [Researcher - LLMs](../post/Researcher_LLMs_2025.pdf)
-- [Senior Engineer - LLMs](../post/Senior_Engineer_LLMs_2025.pdf) 
+- [AI Engineer - LLMs](../post/AI_Engineer_LLMs_2025.pdf) 
+- [Senior AI Engineer - LLMs](../post/Senior_Engineer_LLMs_2025.pdf) 
   
