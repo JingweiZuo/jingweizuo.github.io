@@ -279,10 +279,10 @@ enableGitInfo = false
   url = "#publications"
   weight = 3
 
-[[menu.main]]
-  name = "Services"
-  url = "#services"
-  weight = 4
+#[[menu.main]]
+#  name = "Services"
+#  url = "#services"
+#  weight = 4
 
 #[[menu.main]]
 #  name = "Projects"
