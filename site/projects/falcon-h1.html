@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Falcon-H1 — Jingwei Zuo</title>
+  <meta name="description" content="Falcon-H1: A Family of Hybrid-Head Language Models Redefining Efficiency and Performance. 0.5B to 34B scale, 256K context, 18 languages.">
+
+  <meta property="og:title" content="Falcon-H1 — Jingwei Zuo">
+  <meta property="og:description" content="Hybrid Transformer–SSM architecture redefining efficiency and performance across 0.5B–34B scale. Up to 4× input and 8× output throughput gains.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.jingweizuo.com/projects/falcon-h1.html">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Inter:wght@300;400;450;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-brand">Jingwei Zuo</a>
+      <a href="../index.html#projects" class="nav-back">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+        All Projects
+      </a>
+    </div>
+  </nav>
+
+  <main>
+    <article class="project-page">
+      <div class="container">
+
+        <!-- Hero figure -->
+        <div class="project-hero-fig">
+          <img src="../images/projects/falcon-h1.png" alt="Falcon-H1 logo">
+        </div>
+
+        <!-- Meta -->
+        <div class="project-meta">
+          <h1>Falcon-H1</h1>
+          <p class="project-authors"><strong>Jingwei Zuo</strong>, Maksim Velikanov, Ilyas Chahed, Younes Belkada, Dhia Eddine Rhayem, Guillaume Kunsch, Hakim Hacid, et al.</p>
+          <p class="project-venue-date">arXiv, July 2025</p>
+          <div class="project-links">
+            <a href="https://arxiv.org/abs/2507.22448" class="pill-link" target="_blank" rel="noopener">Paper</a>
+            <a href="https://huggingface.co/collections/tiiuae/falcon-h1-6819f2795bc406da60fab8df" class="pill-link" target="_blank" rel="noopener">Models</a>
+            <a href="https://falcon-lm.github.io/blog/falcon-h1/" class="pill-link" target="_blank" rel="noopener">Blog</a>
+            <a href="https://github.com/tiiuae/Falcon-H1" class="pill-link" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </div>
+
+        <hr class="project-divider">
+
+        <!-- Summary -->
+        <div class="project-section">
+          <h2>Summary</h2>
+          <p>Falcon-H1 is a family of hybrid-head language models that combine Transformer attention with Mamba-2 State Space Model (SSM) heads in a single parallel architecture. Spanning 0.5B to 34B parameters across more than 30 open-weight checkpoints, the family achieves state-of-the-art performance at every size tier while delivering dramatically better inference throughput than pure Transformer equivalents.</p>
+          <p>Attention and SSM layers have complementary strengths: attention excels at precise, in-context retrieval while SSMs provide efficient sequence compression and long-range memory with constant-time per-step cost. Falcon-H1 places them in parallel within each block and exposes the attention&ndash;SSM head ratio as an explicit design parameter, tuned independently per model size. This structural flexibility, combined with up to 18 trillion tokens of curated training data and a 256K-token context window, enables each variant to punch well above its parameter count.</p>
+          <p>Crucially, Falcon-H1 was built by systematically revisiting every established practice in LLM development &mdash; model design, data strategy, and training dynamics &mdash; rather than inheriting conventions from pure-attention predecessors. The result: the 34B model matches or outperforms models up to 70B, the 1.5B-Deep rivals current 7B&ndash;10B models, and the 0.5B model performs on par with 2024-era 7B systems. Multilingual support covers 18 native languages, with the tokenizer designed to scale to 100+.</p>
+        </div>
+
+        <hr class="project-divider">
+
+        <!-- Model Variants -->
+        <div class="project-section">
+          <h2>Model Variants</h2>
+          <p>Each size is released in Base and Instruct variants. The 1.5B-Deep configuration uses a deeper but narrower architecture to match the quality of larger models at lower cost.</p>
+          <ul class="highlights-list" style="margin-top:10px;">
+            <li><strong>Falcon-H1-0.5B</strong> &mdash; Matches typical 7B models from 2024 at a fraction of the cost.</li>
+            <li><strong>Falcon-H1-1.5B</strong> &mdash; Strong general-purpose model at the 1–2B tier.</li>
+            <li><strong>Falcon-H1-1.5B-Deep</strong> &mdash; Deeper architecture; rivals current 7B&ndash;10B models despite 1.5B parameters.</li>
+            <li><strong>Falcon-H1-3B</strong> &mdash; Balanced capability and speed for production workloads.</li>
+            <li><strong>Falcon-H1-7B</strong> &mdash; Flagship mid-size model; state-of-the-art in its class.</li>
+            <li><strong>Falcon-H1-34B</strong> &mdash; Matches or outperforms Qwen3-32B, Qwen2.5-72B, Llama3.3-70B on reasoning, math, and multilingual benchmarks.</li>
+          </ul>
+        </div>
+
+        <hr class="project-divider">
+
+        <!-- Figure: model family overview -->
+        <div class="project-section">
+          <figure>
+            <img src="../images/projects/falcon-h1-models.png" alt="Falcon-H1 model family benchmark overview">
+            <figcaption>Falcon-H1 model family performance overview. Each variant achieves state-of-the-art results at its parameter tier, with the 34B model matching 70B-class competitors and the 1.5B-Deep rivaling 7B&ndash;10B models.</figcaption>
+          </figure>
+        </div>
+
+        <hr class="project-divider">
+
+        <!-- Key Contributions -->
+        <div class="project-section">
+          <h2>Key Contributions</h2>
+
+          <!-- Callout 1: Parallel Hybrid Architecture -->
+          <div style="background:var(--accent-light);border-left:3px solid var(--accent);border-radius:0 8px 8px 0;padding:20px 24px;margin:24px 0;">
+            <p style="font-family:var(--font-sans);font-size:0.73rem;font-weight:600;letter-spacing:0.09em;text-transform:uppercase;color:var(--accent);margin-bottom:6px;">Architecture</p>
+            <h3 style="font-family:var(--font-serif);font-size:1.1rem;font-weight:600;margin-bottom:12px;">Parallel Hybrid-Head Design</h3>
+            <p style="margin-bottom:10px;">Rather than stacking attention and SSM layers sequentially (as in prior hybrid models), Falcon-H1 runs them <em>in parallel</em> within the same block, with their outputs combined before the feed-forward layer. This allows both mechanisms to process the same hidden state at each depth, combining their strengths on every token rather than delegating responsibility by layer position.</p>
+            <p style="margin-bottom:10px;">Critically, the number of attention heads and SSM heads can be adjusted independently, exposing the attention&ndash;SSM ratio as a first-class design parameter. This ratio is tuned per model size during architecture search, enabling each variant to find an optimal efficiency&ndash;quality operating point rather than inheriting a fixed recipe from a larger sibling.</p>
+            <p>The SSM component uses Mamba-2, which supports highly optimized parallel scan kernels and delivers constant per-step compute cost regardless of sequence length. This is what underpins the throughput gains: at long contexts (256K tokens), Falcon-H1 achieves up to <strong>4&times; input throughput</strong> and <strong>8&times; output throughput</strong> vs. pure Transformer models of equivalent quality.</p>
+          </div>
+
+          <!-- Callout 2: Customized μP -->
+          <div style="background:var(--accent-light);border-left:3px solid var(--accent);border-radius:0 8px 8px 0;padding:20px 24px;margin:24px 0;">
+            <p style="font-family:var(--font-sans);font-size:0.73rem;font-weight:600;letter-spacing:0.09em;text-transform:uppercase;color:var(--accent);margin-bottom:6px;">Training Dynamics</p>
+            <h3 style="font-family:var(--font-serif);font-size:1.1rem;font-weight:600;margin-bottom:12px;">Customized &mu;P with 35 Fine-Grained Parameter Groups</h3>
+            <p style="margin-bottom:10px;">Standard Maximal Update Parameterization (&mu;P) assigns trivial unit multipliers to all parameter groups at the proxy (small) model, then relies on width-scaling rules to transfer hyperparameters to larger sizes. For a hybrid architecture with both attention and SSM components &mdash; each with distinct gradient dynamics &mdash; these coarse groupings are insufficient: SSM recurrent parameters, input projections, and attention weights all behave differently and benefit from distinct learning rates.</p>
+            <p style="margin-bottom:10px;">Falcon-H1 introduces a customized &mu;P variant that partitions model parameters into <strong>35 fine-grained groups</strong>, each with its own multiplier. These multipliers are optimized at the base (proxy) model size and then transferred intact to all six production scales &mdash; from 0.5B to 34B &mdash; enabling all models to be trained in parallel rather than sequentially. Additionally, the multipliers provide per-block control over gradient magnitude, allowing targeted damping of loss spikes in SSM blocks without disrupting attention layers.</p>
+            <p>This customization makes Falcon-H1 one of the first large model families to apply &mu;P to a hybrid architecture at scale, and it directly enables the breadth of the release: tuning once and deploying everywhere.</p>
+          </div>
+
+          <!-- Callout 3: Training Strategy -->
+          <div style="background:var(--accent-light);border-left:3px solid var(--accent);border-radius:0 8px 8px 0;padding:20px 24px;margin:24px 0;">
+            <p style="font-family:var(--font-sans);font-size:0.73rem;font-weight:600;letter-spacing:0.09em;text-transform:uppercase;color:var(--accent);margin-bottom:6px;">Data &amp; Training Strategy</p>
+            <h3 style="font-family:var(--font-serif);font-size:1.1rem;font-weight:600;margin-bottom:12px;">Anti-Curriculum Training &amp; Memorization Window-Guided Data Reuse</h3>
+            <p style="margin-bottom:10px;">Conventional curriculum learning presents easy, general-domain data first and reserves complex examples for later stages. Falcon-H1 inverts this: complex, high-quality data &mdash; including STEM, code, and reasoning-heavy material &mdash; is introduced from the <em>very beginning</em> of training. This anti-curriculum approach gives the model more gradient steps on the most demanding content, and empirically yields stronger downstream task performance than a staged approach at equivalent total compute.</p>
+            <p>Complementing this, the team leverages a precise model of the <em>memorization window</em>: the span of training tokens beyond which previously seen data is effectively forgotten. High-quality curated datasets are repeated across epochs, but repetitions are spaced so they never fall within the model's active memory window. This turns data repetition from a risk into a tool, allowing the same high-value tokens to contribute multiple effective gradient signals without the usual risk of memorization artifacts. Together, these two strategies form a coherent data philosophy: expose the model to hard content early, and let the best data teach it more than once.</p>
+          </div>
+        </div>
+
+        <hr class="project-divider">
+
+        <!-- Highlights -->
+        <div class="project-section">
+          <h2>Highlights</h2>
+          <ul class="highlights-list">
+            <li>Six model sizes from 0.5B to 34B (plus the 1.5B-Deep variant) &mdash; 30+ open-weight checkpoints under a permissive license.</li>
+            <li>Falcon-H1-34B matches or outperforms Qwen3-32B, Qwen2.5-72B, and Llama3.3-70B on reasoning, math, and multilingual tasks.</li>
+            <li>Falcon-H1-1.5B-Deep rivals current 7B&ndash;10B models; the 0.5B matches 2024-era 7B systems &mdash; each model effectively punches 2&times; above its parameter count.</li>
+            <li>Up to 4&times; input throughput and 8&times; output throughput vs. pure Transformer models of equivalent quality, at 256K context length.</li>
+            <li>Parallel hybrid architecture with tunable attention&ndash;SSM head ratio, optimized independently per model size.</li>
+            <li>Customized &mu;P over 35 parameter groups enables simultaneous hyperparameter transfer to all six scales.</li>
+            <li>Anti-curriculum training with memorization window-guided data reuse &mdash; hard content from day one, high-quality data repeated safely.</li>
+            <li>Trained on up to 18 trillion tokens; native support for 18 languages, tokenizer extensible to 100+.</li>
+          </ul>
+        </div>
+
+        <hr class="project-divider">
+
+        <!-- Citation -->
+        <div class="project-section">
+          <h2>Citation</h2>
+          <div class="bibtex-block" data-bibtex="falcon-h1"></div>
+        </div>
+
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2025 Jingwei Zuo. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../data/bibtex.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>

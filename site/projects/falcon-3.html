@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Falcon 3 — Jingwei Zuo</title>
+  <meta name="description" content="Falcon 3: five open-source models from 1B to 10B plus Mamba 7B. Depth up-scaling, knowledge distillation, and 14T tokens of STEM-heavy training data.">
+
+  <meta property="og:title" content="Falcon 3 — Jingwei Zuo">
+  <meta property="og:description" content="Five base + instruct models from 1B to 10B, plus Mamba 7B. State-of-the-art open-source LLMs under 13B parameters.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.jingweizuo.com/projects/falcon-3.html">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Inter:wght@300;400;450;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-brand">Jingwei Zuo</a>
+      <a href="../index.html#projects" class="nav-back">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+        All Projects
+      </a>
+    </div>
+  </nav>
+
+  <main>
+    <article class="project-page">
+      <div class="container">
+
+        <!-- Hero figure -->
+        <div class="project-hero-fig">
+          <img src="../images/projects/falcon-3.png" alt="Falcon 3 model family">
+        </div>
+
+        <!-- Meta -->
+        <div class="project-meta">
+          <h1>Falcon 3</h1>
+          <p class="project-authors">Falcon-LLM Team &middot; Technology Innovation Institute</p>
+          <p class="project-venue-date">December 2024</p>
+          <div class="project-links">
+            <a href="https://huggingface.co/collections/tiiuae/falcon3-67605ae03578be86e4e87026" class="pill-link" target="_blank" rel="noopener">Models</a>
+            <a href="https://huggingface.co/blog/falcon3" class="pill-link" target="_blank" rel="noopener">Blog</a>
+          </div>
+        </div>
+
+        <hr class="project-divider">
+
+        <!-- Summary -->
+        <div class="project-section">
+          <h2>Summary</h2>
+          <p>Falcon 3 is a family of five open-source language models from 1B to 10B parameters, plus a Mamba-based 7B variant, released in December 2024. The family sets a new bar for open-source LLMs under 13B, with particular emphasis on science, mathematics, and code capabilities alongside strong general-purpose performance.</p>
+          <p>The release is defined by three distinct training approaches applied strategically by model size: a full large-scale pretraining run for the 7B anchor model (14 trillion tokens on 1024 H100 GPUs); a novel <em>depth up-scaling</em> procedure that grows the 7B to a 10B state-of-the-art model by duplicating and continued-pretraining redundant layers; and <em>knowledge distillation</em> combined with pruning to produce highly efficient 1B and 3B models from less than 100 giga-tokens of curated data. Each technique is chosen to maximize quality per compute dollar at its target scale.</p>
+          <p>All Transformer-based models use a Llama-compatible architecture with SwiGLU activations and a 131K-token vocabulary, making them a drop-in for the existing open-source tooling ecosystem. Context lengths range from 8K (1B) to 32K (3B, 7B, 10B, Mamba).</p>
+        </div>
+
+        <hr class="project-divider">
+
+        <!-- Model Variants -->
+        <div class="project-section">
+          <h2>Model Variants</h2>
+          <ul class="highlights-list" style="margin-top:8px;">
+            <li><strong>Falcon3-1B</strong> &mdash; 8K context. Developed via pruning and distillation; surpasses SmolLM2-1.7B and matches Gemma-2-2B.</li>
+            <li><strong>Falcon3-3B</strong> &mdash; 32K context. Knowledge-distilled; outperforms Llama-3.1-8B and Minitron-4B-Base despite its smaller size.</li>
+            <li><strong>Falcon3-7B</strong> &mdash; 32K context. The anchor model trained from scratch on 14T tokens; competitive with Qwen2.5-7B across reasoning, math, and knowledge benchmarks.</li>
+            <li><strong>Falcon3-10B</strong> &mdash; 32K context. Depth up-scaled from 7B, then continued-pretrained on 2T tokens of high-quality data; state-of-the-art for models under 13B.</li>
+            <li><strong>Falcon3-Mamba-7B</strong> &mdash; 32K context. A pure State Space Model enhanced with 1.5T additional tokens; the top-performing open SSM at its scale, matching Transformer 7B models.</li>
+          </ul>
+          <p style="margin-top:12px;font-size:0.88rem;color:var(--text-secondary);">All models are released in Base, Instruct, GGUF, GPTQ-Int4, GPTQ-Int8, and AWQ variants (1B/3B also available in 1.58-bit).</p>
+        </div>
+
+        <hr class="project-divider">
+
+        <!-- Figure -->
+        <div class="project-section">
+          <figure>
+            <img src="../images/projects/falcon-3-details.png" alt="Falcon 3 benchmark results">
+            <figcaption>Falcon 3 benchmark results across model sizes. Falcon3-10B achieves state-of-the-art on math (MATH-Lvl5: 22.9, GSM8K: 83.0), coding (MBPP: 73.8), and knowledge (MMLU: 73.1, MMLU-PRO: 42.5) among models under 13B parameters.</figcaption>
+          </figure>
+        </div>
+
+        <hr class="project-divider">
+
+        <!-- Key Contributions -->
+        <div class="project-section">
+          <h2>Key Contributions</h2>
+
+          <!-- Callout 1: Large-scale pretraining -->
+          <div style="background:var(--accent-light);border-left:3px solid var(--accent);border-radius:0 8px 8px 0;padding:20px 24px;margin:24px 0;">
+            <p style="font-family:var(--font-sans);font-size:0.73rem;font-weight:600;letter-spacing:0.09em;text-transform:uppercase;color:var(--accent);margin-bottom:6px;">Training — 7B Anchor</p>
+            <h3 style="font-family:var(--font-serif);font-size:1.1rem;font-weight:600;margin-bottom:12px;">Single Large-Scale Pretraining Run on 14 Trillion Tokens</h3>
+            <p style="margin-bottom:10px;">The 7B model is the foundation of the entire family, trained from scratch on 1024 H100 GPU chips across 14 trillion tokens of carefully curated data. The corpus places strong emphasis on STEM domains &mdash; science, mathematics, and code &mdash; alongside high-quality web text and curated multilingual content. This heavy STEM weighting is a deliberate departure from web-dominant mixtures, and it directly underlies the family's strengths in reasoning and problem-solving tasks.</p>
+            <p>The 7B model uses a head dimension of 256, optimized for FlashAttention-3, and a 131K-token vocabulary that covers the major world languages by default. GSM8K (79.1), BBH (51.0), and MMLU (67.4) scores establish it as competitive with the best open 7B models available at release time.</p>
+          </div>
+
+          <!-- Callout 2: Depth up-scaling -->
+          <div style="background:var(--accent-light);border-left:3px solid var(--accent);border-radius:0 8px 8px 0;padding:20px 24px;margin:24px 0;">
+            <p style="font-family:var(--font-sans);font-size:0.73rem;font-weight:600;letter-spacing:0.09em;text-transform:uppercase;color:var(--accent);margin-bottom:6px;">Architecture — 10B Model</p>
+            <h3 style="font-family:var(--font-serif);font-size:1.1rem;font-weight:600;margin-bottom:12px;">Depth Up-Scaling: Growing 7B to 10B via Layer Duplication</h3>
+            <p style="margin-bottom:10px;">Rather than training the 10B model from scratch &mdash; which would require substantially more compute &mdash; the team employs a depth up-scaling strategy. Redundant layers in the trained 7B model are identified and duplicated, expanding the model from 7B to 10B parameters while preserving the learned representations. The expanded model is then continued-pretrained on a further 2 trillion tokens of high-quality, STEM-heavy data to let the new layers specialize and the expanded capacity consolidate.</p>
+            <p>This approach is significantly more compute-efficient than training 10B from scratch: the 7B pretraining investment is reused rather than discarded, and the continuation run targets only the highest-quality data rather than the full web corpus. The result is the strongest open model under 13B parameters at time of release: GSM8K (83.0), MMLU (73.1), MMLU-PRO (42.5), MBPP (73.8), and IFEval-Instruct (78.0).</p>
+          </div>
+
+          <!-- Callout 3: Knowledge distillation -->
+          <div style="background:var(--accent-light);border-left:3px solid var(--accent);border-radius:0 8px 8px 0;padding:20px 24px;margin:24px 0;">
+            <p style="font-family:var(--font-sans);font-size:0.73rem;font-weight:600;letter-spacing:0.09em;text-transform:uppercase;color:var(--accent);margin-bottom:6px;">Efficiency — 1B &amp; 3B Models</p>
+            <h3 style="font-family:var(--font-serif);font-size:1.1rem;font-weight:600;margin-bottom:12px;">Knowledge Distillation &amp; Pruning for Tiny-Scale Efficiency</h3>
+            <p style="margin-bottom:10px;">Training 1B and 3B models from scratch on trillions of tokens is compute-wasteful when a capable 7B teacher is already available. Instead, Falcon3-1B and Falcon3-3B are derived through structured pruning of the 7B model followed by knowledge distillation, using fewer than 100 giga-tokens of carefully selected curated data &mdash; roughly 1% of the 7B anchor's token budget.</p>
+            <p>The distilled models inherit the 7B's representational structure and are then fine-tuned to compress the teacher's knowledge into a smaller parameter count. Despite the extreme data efficiency, the results are striking: Falcon3-3B outperforms Llama-3.1-8B and Minitron-4B-Base, while Falcon3-1B surpasses SmolLM2-1.7B and matches Gemma-2-2B &mdash; demonstrating that distillation from a well-trained teacher can routinely outperform same-size models trained from scratch.</p>
+          </div>
+        </div>
+
+        <hr class="project-divider">
+
+        <!-- Highlights -->
+        <div class="project-section">
+          <h2>Highlights</h2>
+          <ul class="highlights-list">
+            <li>Five Transformer models (1B, 3B, 7B, 10B) plus Mamba 7B &mdash; all open-weight with Base, Instruct, and quantized variants.</li>
+            <li>Falcon3-10B: state-of-the-art under 13B &mdash; GSM8K 83.0, MMLU 73.1, MMLU-PRO 42.5, MBPP 73.8.</li>
+            <li>Falcon3-3B outperforms Llama-3.1-8B (2.5&times; its size) via knowledge distillation on &lt;100GT of data.</li>
+            <li>Depth up-scaling reuses the 7B training investment to build the 10B model at a fraction of the cost of training from scratch.</li>
+            <li>Falcon3-Mamba-7B: top open SSM at its scale, enhanced with 1.5T additional tokens, matching Transformer 7B models.</li>
+            <li>STEM-heavy data mixture (science, math, code) as a first-class design decision, not an afterthought.</li>
+            <li>Llama-compatible Transformer architecture with 131K-token vocabulary and FlashAttention-3-optimized head dimensions.</li>
+            <li>Context lengths up to 32K; available in GGUF, GPTQ-Int4/Int8, AWQ, and 1.58-bit formats.</li>
+          </ul>
+        </div>
+
+        <hr class="project-divider">
+
+        <!-- Citation -->
+        <div class="project-section">
+          <h2>Citation</h2>
+          <div class="bibtex-block" data-bibtex="falcon-3"></div>
+        </div>
+
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2025 Jingwei Zuo. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../data/bibtex.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>
