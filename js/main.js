@@ -94,7 +94,7 @@
       var article = document.createElement('article');
       article.className = 'project-card';
       article.innerHTML =
-        '<div class="project-card-image"><img src="' + imgBase + proj.image + '" alt="' + proj.imageAlt + '"></div>' +
+        '<div class="project-card-image"><a href="' + pageBase + proj.page + '"><img src="' + imgBase + proj.image + '" alt="' + proj.imageAlt + '"></a></div>' +
         '<div class="project-card-body">' +
           '<h3 class="project-card-title"><a href="' + pageBase + proj.page + '">' + proj.title + '</a>' + badgeHtml + suffixHtml + '</h3>' +
           '<p class="project-card-desc">' + proj.desc + '</p>' +
