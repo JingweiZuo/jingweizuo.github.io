@@ -40,11 +40,11 @@ window.BIBTEX = {
   year = {2024}\n\
 }",
 
-  "falcon-mamba": "@article{zuo2024falconmamba,\n\
-  title   = {Falcon Mamba: The First Competitive Attention-free 7B Language Model},\n\
-  author  = {Jingwei Zuo and Maksim Velikanov and Dhouha El Rhaiem and Imen Chahed and Yassine Belkada and Giovanni Kunsch and Hichem Hacid},\n\
-  journal = {arXiv preprint arXiv:2410.05355},\n\
-  year    = {2024}\n\
+  "falcon-mamba": "@article{zuo2024falcon,\n\
+  title={Falcon mamba: The first competitive attention-free 7b language model},\n\
+  author={Zuo, Jingwei and Velikanov, Maksim and Rhaiem, Dhia Eddine and Chahed, Ilyas and Belkada, Younes and Kunsch, Guillaume and Hacid, Hakim},\n\
+  journal={arXiv preprint arXiv:2410.05355},\n\
+  year={2024}\n\
 }",
 
   "learnable-multiplier": "@article{velikanov2026learnable,\n\
