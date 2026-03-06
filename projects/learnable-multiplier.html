@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Learnable Multiplier — Jingwei Zuo</title>
+  <meta name="description" content="Learnable Multipliers free weight matrix scales from the noise–weight decay equilibrium, improving LLM training with zero inference overhead.">
+
+  <meta property="og:title" content="Learnable Multiplier — Jingwei Zuo">
+  <meta property="og:description" content="Extends μP with per-layer learnable scaling, eliminating suboptimal weight norms imposed by the optimizer. +1.2% average benchmark gain at zero inference cost.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.jingweizuo.com/projects/learnable-multiplier.html">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Inter:wght@300;400;450;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-brand">Jingwei Zuo</a>
+      <a href="../index.html#projects" class="nav-back">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+        All Projects
+      </a>
+    </div>
+  </nav>
+
+  <main>
+    <article class="project-page">
+      <div class="container">
+
+        <!-- Hero figure -->
+        <div class="project-hero-fig">
+          <img src="../images/projects/learnable-multiplier-norms.png" alt="Per-layer weight norm evolution with and without learnable multipliers">
+        </div>
+
+        <!-- Meta -->
+        <div class="project-meta">
+          <h1>Learnable Multipliers</h1>
+          <p class="project-authors">M. Velikanov, I. Chahed, <strong>J. Zuo</strong>, D. E. Rhaiem, Y. Belkada, H. Hacid.</p>
+          <p class="project-venue-date">arXiv, January 2026</p>
+          <div class="project-links">
+            <a href="https://arxiv.org/abs/2601.04890" class="pill-link" target="_blank" rel="noopener">Paper</a>
+          </div>
+        </div>
+
+        <hr class="project-divider">
+
+        <!-- Summary -->
+        <div class="project-section">
+          <h2>Summary</h2>
+          <p>Weight decay, combined with stochastic gradient noise, drives matrix weight norms to an equilibrium set entirely by optimizer hyperparameters &mdash; not by the data. The fix: attach a small learnable scalar or row/column vector to each matrix. These <em>learnable multipliers</em> escape the same noise&ndash;decay dynamics and freely adapt scale to the task, while the underlying matrix stays regularized. At inference time multipliers merge into the weights, leaving <strong>zero overhead</strong>.</p>
+          <p>Validated on a 200GT run with Falcon-H1-0.5B, the method yields <strong>+1.2% average improvement</strong> over well-tuned Adam and Muon baselines, with outsized gains on reasoning: BBH +2.3&ndash;3.4%, GSM8K +2.6% (Muon). It is integrated into <a href="../projects/falcon-h1-tiny.html">Falcon-H1-Tiny</a> and underpins the customized &mu;P in <a href="../projects/falcon-h1.html">Falcon-H1</a>.</p>
+        </div>
+
+        <hr class="project-divider">
+
+        <!-- Key Contributions -->
+        <div class="project-section">
+          <h2>Key Contributions</h2>
+
+          <!-- Callout 1: The problem -->
+          <div style="background:var(--accent-light);border-left:3px solid var(--accent);border-radius:0 8px 8px 0;padding:20px 24px;margin:24px 0;">
+            <p style="font-family:var(--font-sans);font-size:0.73rem;font-weight:600;letter-spacing:0.09em;text-transform:uppercase;color:var(--accent);margin-bottom:6px;">The Problem</p>
+            <h3 style="font-family:var(--font-serif);font-size:1.1rem;font-weight:600;margin-bottom:12px;">The Noise&ndash;Weight Decay Equilibrium</h3>
+            <p style="margin-bottom:10px;">Gradient noise causes weights to expand in a Brownian-motion-like drift; weight decay shrinks them back. The resulting equilibrium norm scales as <strong>&Vert;W&Vert;&ensp;&prop;&ensp;&radic;(&eta;/&lambda;)</strong> &mdash; set entirely by the learning rate &eta; and decay coefficient &lambda;, not by the data. Every matrix layer is locked to a scale dictated by the optimizer, regardless of what the model is learning.</p>
+            <p>Non-matrix parameters (RMSNorm weights, scalar gates) typically carry no weight decay and face no such constraint, which is why they can settle at very different norms without instability. Under standard &mu;P this equilibrium also breaks width scaling: activation norms grow as &radic;d while relative gradient updates shrink as 1/&radic;d, undermining feature learning at scale. Learnable multipliers resolve both problems.</p>
+          </div>
+
+          <!-- Callout 2: The solution -->
+          <div style="background:var(--accent-light);border-left:3px solid var(--accent);border-radius:0 8px 8px 0;padding:20px 24px;margin:24px 0;">
+            <p style="font-family:var(--font-sans);font-size:0.73rem;font-weight:600;letter-spacing:0.09em;text-transform:uppercase;color:var(--accent);margin-bottom:6px;">The Solution</p>
+            <h3 style="font-family:var(--font-serif);font-size:1.1rem;font-weight:600;margin-bottom:12px;">Scalar and Row&ndash;Column Learnable Multipliers</h3>
+            <p style="margin-bottom:10px;">The scalar form attaches a trainable scalar <em>s</em> to each matrix: <strong>W&#x0305; = s &middot; W</strong>. W stays in equilibrium under weight decay; s carries no decay and adapts freely. Its gradient accumulates over the full matrix, averaging out per-element noise and making it far more stable than any individual weight. The row&ndash;column form <strong>W&#x0305;&#x1D34C; = r&#x1D62; &middot; W&#x1D62;&#x1D63; &middot; c&#x1D63;</strong> goes further, letting each row and column settle independently &mdash; a learnable, data-adaptive generalization of &mu;P's fixed proxy-model multipliers.</p>
+            <p>Two training details matter: multiplier gradients should be excluded from global gradient-norm clipping (they are large early in training and would otherwise trigger excessive clipping); and a light weight decay (&lambda;<sub>lrm</sub>&thinsp;=&thinsp;2&times;10<sup>&minus;3</sup>) stabilizes multiplicative and normalization symmetries. At inference, multipliers merge into the weights &mdash; <strong>zero memory or latency overhead</strong>.</p>
+          </div>
+
+          <!-- Callout 3: Results and μP generalization -->
+          <div style="background:var(--accent-light);border-left:3px solid var(--accent);border-radius:0 8px 8px 0;padding:20px 24px;margin:24px 0;">
+            <p style="font-family:var(--font-sans);font-size:0.73rem;font-weight:600;letter-spacing:0.09em;text-transform:uppercase;color:var(--accent);margin-bottom:6px;">Results</p>
+            <h3 style="font-family:var(--font-serif);font-size:1.1rem;font-weight:600;margin-bottom:12px;">Consistent Gains Across Optimizers, Concentrated in Reasoning</h3>
+            <p style="margin-bottom:10px;">Falcon-H1-0.5B trained for 200GT (≈20× Chinchilla-optimal). Learnable multipliers improve over well-tuned baselines by <strong>+1.21%</strong> avg (Adam) and <strong>+1.10%</strong> avg (Muon). Near-identical gains across both optimizers confirm the source is the noise&ndash;WD constraint, not optimizer-specific interactions.</p>
+            <p>Reasoning benchmarks gain most: BBH <strong>+2.33%</strong> (Adam) / <strong>+3.39%</strong> (Muon); GSM8K <strong>+2.61%</strong> (Muon). Knowledge tasks show smaller but consistent improvement (MMLU +1.15%). Ablations show multipliers improve any baseline, including fully hand-tuned &mu;P configurations &mdash; positioning them as &mu;P's learnable next step rather than an alternative.</p>
+          </div>
+        </div>
+
+        <hr class="project-divider">
+
+        <!-- Highlights -->
+        <div class="project-section">
+          <h2>Highlights</h2>
+          <ul class="highlights-list">
+            <li>+1.21% avg (Adam) / +1.10% avg (Muon) over well-tuned baselines; BBH +2.33–3.39%, GSM8K +2.61%.</li>
+            <li>Zero inference overhead &mdash; multipliers merge into weights before deployment.</li>
+            <li>Works with any optimizer; gains are optimizer-agnostic, confirming the noise&ndash;WD mechanism.</li>
+            <li>Learnable generalization of &mu;P: proxy-model tuning replaced by in-run scale learning, with at most ~2% training throughput cost.</li>
+            <li>Integrated into <a href="../projects/falcon-h1-tiny.html">Falcon-H1-Tiny</a> and the customized &mu;P of <a href="../projects/falcon-h1.html">Falcon-H1</a>.</li>
+          </ul>
+        </div>
+
+        <hr class="project-divider">
+
+        <!-- Benchmark results figure -->
+        <div class="project-section">
+          <figure>
+            <img src="../images/projects/learnable-multiplier.png" alt="Downstream benchmark results for Adam and Muon with and without learnable multipliers">
+            <figcaption>Downstream evaluation on a 200GT training run (Falcon-H1-0.5B). Learnable multipliers deliver consistent gains over well-tuned baselines for both Adam (+1.21% avg) and Muon (+1.10% avg), with the largest improvements on reasoning benchmarks BBH and GSM8K.</figcaption>
+          </figure>
+        </div>
+
+        <hr class="project-divider">
+
+        <!-- Citation -->
+        <div class="project-section">
+          <h2>Citation</h2>
+          <div class="bibtex-block" data-bibtex="learnable-multiplier"></div>
+        </div>
+
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2025 Jingwei Zuo. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../data/bibtex.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>
