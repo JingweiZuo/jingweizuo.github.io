@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Falcon-H1-Tiny — Jingwei Zuo</title>
+  <meta name="description" content="15 open-source models from 90M to 0.6B. Key innovations: memorization window-guided multi-epoch training and anti-curriculum learning for small-scale LLMs.">
+
+  <meta property="og:title" content="Falcon-H1-Tiny — Jingwei Zuo">
+  <meta property="og:description" content="Extremely compact yet powerful: 90M English, Coder, Tool Calling, 100M Multilingual, and 0.6B Reasoning models — with novel training strategies for tiny LLMs.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.jingweizuo.com/projects/falcon-h1-tiny.html">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Inter:wght@300;400;450;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-brand">Jingwei Zuo</a>
+      <a href="../index.html#projects" class="nav-back">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+        All Projects
+      </a>
+    </div>
+  </nav>
+
+  <main>
+    <article class="project-page">
+      <div class="container">
+
+        <!-- Hero figure -->
+        <div class="project-hero-fig">
+          <img src="../images/projects/falcon-h1-tiny.png" alt="Falcon-H1-Tiny model overview">
+        </div>
+
+        <!-- Meta -->
+        <div class="project-meta">
+          <h1>Falcon-H1-Tiny</h1>
+          <p class="project-authors">Falcon-LLM Team &middot; Technology Innovation Institute</p>
+          <p class="project-venue-date">January 2026</p>
+          <div class="project-links">
+            <a href="https://huggingface.co/collections/tiiuae/falcon-h1-tiny" class="pill-link" target="_blank" rel="noopener">Models</a>
+            <a href="https://huggingface.co/spaces/tiiuae/tiny-h1-blogpost" class="pill-link" target="_blank" rel="noopener">Blog</a>
+          </div>
+        </div>
+
+        <hr class="project-divider">
+
+        <!-- Summary -->
+        <div class="project-section">
+          <h2>Summary</h2>
+          <p>Falcon-H1-Tiny is a family of 15 open-source language models at 90M–0.6B scale, covering English, Multilingual, Coding, Tool Calling, and Reasoning use cases. The project shows that tiny models trained with the right strategy can deliver specialized capabilities that rival or surpass much larger generalist alternatives for targeted applications.</p>
+          <p>All models are built on the Falcon-H1 hybrid architecture, combining parallel Mamba SSM and Transformer attention heads. The core challenge at tiny scale is that a model's memorization window shrinks relative to the total dataset size, making conventional pretrain-then-finetune pipelines inefficient. Two novel training contributions directly address this: <strong>memorization window-guided multi-epoch training</strong> and an <strong>anti-curriculum learning strategy</strong>. The project also applies <a href="../projects/learnable-multiplier.html"><strong>Learnable Multipliers (LRM)</strong></a> with the Muon optimizer, yielding up to 20% relative improvement across standard benchmarks.</p>
+        </div>
+
+        <hr class="project-divider">
+
+        <!-- Model Variants -->
+        <div class="project-section">
+          <h2>Model Variants</h2>
+          <ul class="highlights-list" style="margin-top: 8px;">
+            <li><strong>English (90M)</strong> &mdash; Base, Instruct, and DPO-aligned variants for general-purpose text tasks.</li>
+            <li><strong>Multilingual (100M)</strong> &mdash; Base and Instruct models trained on a mixed multilingual and high-quality English corpus.</li>
+            <li><strong>Coder (90M)</strong> &mdash; Specialized for Python code generation and fill-in-the-middle (FIM) completion, trained for 315GT.</li>
+            <li><strong>Tool Calling (90M)</strong> &mdash; Trained across multiple function-calling patterns for agentic and API-use applications.</li>
+            <li><strong>Reasoning (0.6B and 90M)</strong> &mdash; Pretrained directly on long chain-of-thought reasoning traces; the 0.6B variant achieves state-of-the-art results for its size on AIME24/25, MATH500, and LiveCodeBench.</li>
+          </ul>
+        </div>
+
+        <hr class="project-divider">
+
+        <!-- Key Contributions -->
+        <div class="project-section">
+          <h2>Key Contributions</h2>
+
+          <!-- Callout 1: Memorization Window -->
+          <div style="background:var(--accent-light);border-left:3px solid var(--accent);border-radius:0 8px 8px 0;padding:20px 24px;margin:24px 0;">
+            <p style="font-family:var(--font-sans);font-size:0.73rem;font-weight:600;letter-spacing:0.09em;text-transform:uppercase;color:var(--accent);margin-bottom:6px;">Research Insight &mdash; I</p>
+            <h3 style="font-family:var(--font-serif);font-size:1.1rem;font-weight:600;margin-bottom:12px;">Memorization Window-Guided Multi-Epoch Training</h3>
+            <p style="margin-bottom:10px;">A key observation is that language models exhibit a finite <em>memorization window</em>: tokens seen far enough in the past are effectively forgotten. For a 7B-scale model this window spans roughly 100–500 giga-tokens. This means high-quality data can be safely repeated — without overfitting or degradation — as long as repetitions are spaced beyond the window.</p>
+            <p style="margin-bottom:10px;">Concretely, defining <em>p</em> as the fraction of high-quality data, <em>D</em> as total dataset size, and <em>M</em> as the memorization window, the condition <strong>p &le; D/M</strong> ensures the model never re-encounters the same tokens within its active memory. This gives a principled budget for how aggressively curated data can be up-weighted and repeated across training.</p>
+            <p>At tiny model scale (&lt;100M), the memorization window is substantially smaller, which directly changes the safe repetition budget and optimal data mixture. This insight informed the data scheduling for all Falcon-H1-Tiny variants, enabling high-quality data to contribute multiple effective passes without the usual risks of memorization-induced overfitting.</p>
+          </div>
+
+          <!-- Callout 2: Anti-Curriculum -->
+          <div style="background:var(--accent-light);border-left:3px solid var(--accent);border-radius:0 8px 8px 0;padding:20px 24px;margin:24px 0;">
+            <p style="font-family:var(--font-sans);font-size:0.73rem;font-weight:600;letter-spacing:0.09em;text-transform:uppercase;color:var(--accent);margin-bottom:6px;">Research Insight &mdash; II</p>
+            <h3 style="font-family:var(--font-serif);font-size:1.1rem;font-weight:600;margin-bottom:12px;">Anti-Curriculum Learning Training Strategy</h3>
+            <p style="margin-bottom:10px;">Classical curriculum learning separates pretraining from fine-tuning: build general capabilities first, then specialize. For large models this works well — but for very small models, limited capacity means the two-stage approach squanders the most targeted training signal. The model partially forgets pretrain knowledge during fine-tuning, and task-specific data sees too few gradient steps relative to total compute.</p>
+            <p style="margin-bottom:10px;">The anti-curriculum approach inverts this: task-specific data — instruction-following dialogues, reasoning traces, code — is integrated directly into the <em>pretraining</em> stage, comprising up to 25% of the training mixture from the start. Rather than specializing after the fact, the model builds target capabilities alongside its general language understanding from the very beginning. For small models, this effectively turns a memorization-window limitation into a strength: the model sees diverse, high-value data early and often.</p>
+            <p>The empirical gains are substantial. On instruction-following (IFEval), anti-curriculum pretraining followed by DPO reaches <strong>66.08</strong> vs. <strong>53.47</strong> for classical curriculum+DPO &mdash; a 24% relative improvement. On reasoning (AIME25), the reasoning pretraining approach solves <strong>9/30</strong> problems vs. <strong>2/30</strong> for SFT-only, a 4.5&times; gain at identical parameter count.</p>
+          </div>
+
+          <!-- Callout 3: Learnable Multipliers + Muon -->
+          <div style="background:var(--accent-light);border-left:3px solid var(--accent);border-radius:0 8px 8px 0;padding:20px 24px;margin:24px 0;">
+            <p style="font-family:var(--font-sans);font-size:0.73rem;font-weight:600;letter-spacing:0.09em;text-transform:uppercase;color:var(--accent);margin-bottom:6px;">Research Insight &mdash; III</p>
+            <h3 style="font-family:var(--font-serif);font-size:1.1rem;font-weight:600;margin-bottom:12px;">Learnable Multipliers + Muon for Token-Efficient Training</h3>
+            <p style="margin-bottom:10px;">Standard parameterization of matrix layers leaves each layer's effective learning rate dictated by global hyperparameters &mdash; weight decay, learning rate schedule, and initialization scale &mdash; rather than learned from the data itself. At tiny model scale this is particularly costly: with a tight token budget, every gradient step must be used as efficiently as possible. A suboptimal equilibrium between noise and weight decay can cause norms to settle at values that are hyperparameter artifacts rather than task-optimal representations.</p>
+            <p style="margin-bottom:10px;"><a href="../projects/learnable-multiplier.html"><strong>Learnable Multipliers (LRM)</strong></a> address this by introducing a per-layer learnable scalar that decouples the effective scale of each matrix from the global optimizer state. This frees each layer to find its own norm independently, resolving the noise&ndash;weight-decay equilibrium and allowing the model to allocate representational capacity where it is most needed. Critically, LRM is compatible with &mu;P (Maximal Update Parameterization), enabling stable hyperparameter transfer across model sizes.</p>
+            <p style="margin-bottom:10px;">Paired with the <strong>Muon optimizer</strong> &mdash; which applies an orthogonalization step (Nesterov momentum followed by NewtonSchulz iteration) to gradient updates, ensuring each parameter receives an update of consistent magnitude regardless of gradient norm &mdash; the combination produces substantially more uniform and effective weight updates across all layers.</p>
+            <p>Together, LRM + Muon deliver up to <strong>20% relative improvement</strong> on MMLU, BBH, and GSM8K compared to standard Adam-based training at the same token budget. In other words, the model learns more from each token &mdash; a decisive advantage when the total compute envelope is small.</p>
+          </div>
+        </div>
+
+        <hr class="project-divider">
+
+        <!-- Highlights -->
+        <div class="project-section">
+          <h2>Highlights</h2>
+          <ul class="highlights-list">
+            <li>15 open-source models from 90M to 0.6B spanning English, Multilingual, Coder, Tool Calling, and Reasoning.</li>
+            <li>Memorization window-guided data scheduling enables principled multi-epoch training on high-quality data without overfitting.</li>
+            <li>Anti-curriculum pretraining outperforms classical pretrain&rarr;finetune pipelines for small models: +24% on IFEval, 4.5&times; more AIME25 problems solved.</li>
+            <li>Learnable Multipliers + Muon optimizer deliver up to 20% relative gains on MMLU, BBH, and GSM8K over standard recipes.</li>
+            <li>0.6B Reasoning model achieves state-of-the-art on AIME24/25, MATH500, and LiveCodeBench for its parameter class.</li>
+            <li>Architecture ablations show depth and SSM capacity dominate width at tiny scale: a 27-layer, 512-hidden-size configuration is optimal for 90M models.</li>
+            <li>A practical demonstration that a multitude of specialized tiny models can be a compelling alternative to a single large generalist.</li>
+          </ul>
+        </div>
+
+        <hr class="project-divider">
+
+        <!-- Citation -->
+        <div class="project-section">
+          <h2>Citation</h2>
+          <div class="bibtex-block" data-bibtex="falcon-h1-tiny"></div>
+        </div>
+
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2025 Jingwei Zuo. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../data/bibtex.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>

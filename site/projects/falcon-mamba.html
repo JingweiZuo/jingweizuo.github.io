@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Falcon Mamba — Jingwei Zuo</title>
+  <meta name="description" content="Falcon Mamba 7B: the first competitive attention-free 7B language model, trained on 5.8T tokens. Constant-memory inference at any sequence length.">
+
+  <meta property="og:title" content="Falcon Mamba — Jingwei Zuo">
+  <meta property="og:description" content="The first pure SSM to match Transformer 7B models at scale. Faster inference, constant memory, no KV cache.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.jingweizuo.com/projects/falcon-mamba.html">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Inter:wght@300;400;450;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-brand">Jingwei Zuo</a>
+      <a href="../index.html#projects" class="nav-back">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+        All Projects
+      </a>
+    </div>
+  </nav>
+
+  <main>
+    <article class="project-page">
+      <div class="container">
+
+        <!-- Hero figure -->
+        <div class="project-hero-fig">
+          <img src="../images/projects/falcon-mamba.png" alt="Falcon Mamba throughput and memory comparison">
+        </div>
+
+        <!-- Meta -->
+        <div class="project-meta">
+          <h1>Falcon Mamba</h1>
+          <p class="project-authors"><strong>Jingwei Zuo</strong>, Maksim Velikanov, Dhia Eddine Rhayem, Ilyas Chahed, Younes Belkada, Guillaume Kunsch, Hakim Hacid.</p>
+          <p class="project-venue-date">arXiv, August 2024</p>
+          <div class="project-links">
+            <a href="https://arxiv.org/abs/2410.05355" class="pill-link" target="_blank" rel="noopener">Paper</a>
+            <a href="https://huggingface.co/tiiuae/falcon-mamba-7b" class="pill-link" target="_blank" rel="noopener">Model</a>
+            <a href="https://huggingface.co/blog/falconmamba" class="pill-link" target="_blank" rel="noopener">Blog</a>
+          </div>
+        </div>
+
+        <hr class="project-divider">
+
+        <!-- Summary -->
+        <div class="project-section">
+          <h2>Summary</h2>
+          <p>Falcon Mamba is the first pure State Space Language Model (SSLM) at 7B scale to achieve fully competitive performance with leading Transformer-based models. Trained on 5.8 trillion tokens of carefully curated data, it surpasses Mistral 7B, Llama 3.1-8B, and Falcon2-11B on standard benchmarks, and matches Gemma 7B &mdash; all without a single attention layer.</p>
+          <p>The significance extends beyond benchmark numbers. Transformer-based LLMs carry a fundamental inference cost: the KV cache grows linearly with sequence length, causing both memory consumption and generation latency to degrade at long contexts. Falcon Mamba eliminates this entirely. Its recurrent SSM state has fixed size regardless of how many tokens have been processed, yielding <em>constant memory</em> and <em>constant per-token generation time</em> at any sequence length. A single A10 24GB GPU can serve Falcon Mamba on sequences that would OOM a Transformer of the same parameter count.</p>
+          <p>At the time of release, Falcon Mamba was the best-performing pure SSM in the literature, outperforming RecurrentGemma 9B and all RWKV-v6 variants. It laid the empirical foundation for the later Falcon-H1 hybrid family, demonstrating that SSMs could be trusted at scale and were ready to be paired with attention in production-grade models.</p>
+        </div>
+
+        <hr class="project-divider">
+
+        <!-- Figure -->
+        <div class="project-section">
+          <figure>
+            <img src="../images/projects/falcon-mamba-efficiency.png" alt="Falcon Mamba memory and throughput vs Transformers">
+            <figcaption>Inference efficiency comparison between Falcon Mamba and Transformer-based models. Peak GPU memory stays flat as sequence length grows (no KV cache), and generation throughput remains constant &mdash; advantages that compound dramatically at long-context workloads.</figcaption>
+          </figure>
+        </div>
+
+        <hr class="project-divider">
+
+        <!-- Key Contributions -->
+        <div class="project-section">
+          <h2>Key Contributions</h2>
+
+          <!-- Callout 1: Pure SSM at scale -->
+          <div style="background:var(--accent-light);border-left:3px solid var(--accent);border-radius:0 8px 8px 0;padding:20px 24px;margin:24px 0;">
+            <p style="font-family:var(--font-sans);font-size:0.73rem;font-weight:600;letter-spacing:0.09em;text-transform:uppercase;color:var(--accent);margin-bottom:6px;">Core Result</p>
+            <h3 style="font-family:var(--font-serif);font-size:1.1rem;font-weight:600;margin-bottom:12px;">First Competitive Pure SSM at 7B Scale</h3>
+            <p style="margin-bottom:10px;">Prior to Falcon Mamba, the prevailing consensus was that pure SSMs could not match Transformer quality at the 7B scale &mdash; and that hybrid Mamba-Transformer architectures were necessary to bridge the gap. Falcon Mamba directly challenges this view. By training a pure Mamba model on 5.8 trillion tokens with careful data curation and stable training techniques, the team demonstrates that SSMs alone can achieve Transformer-competitive performance without any attention mechanism.</p>
+            <p>This result matters because it validates SSMs as a first-class architecture for large-scale language modeling, not just a niche efficiency tool. It directly motivated and de-risked the subsequent development of <a href="../projects/falcon-h1.html">Falcon-H1</a>, where SSM and attention heads are paired as equals rather than SSMs serving as a minor complement to a predominantly Transformer model.</p>
+          </div>
+
+          <!-- Callout 2: Constant-memory inference -->
+          <div style="background:var(--accent-light);border-left:3px solid var(--accent);border-radius:0 8px 8px 0;padding:20px 24px;margin:24px 0;">
+            <p style="font-family:var(--font-sans);font-size:0.73rem;font-weight:600;letter-spacing:0.09em;text-transform:uppercase;color:var(--accent);margin-bottom:6px;">Inference Efficiency</p>
+            <h3 style="font-family:var(--font-serif);font-size:1.1rem;font-weight:600;margin-bottom:12px;">Constant Memory &amp; Throughput at Any Sequence Length</h3>
+            <p style="margin-bottom:10px;">Transformer inference has a well-known scaling problem: the KV cache stores key and value tensors for every past token, so memory grows linearly with context length and generation throughput falls as the cache fills GPU bandwidth. At 128K tokens a Transformer-based 7B model requires far more GPU memory than at 2K tokens, and each new token takes longer to generate.</p>
+            <p style="margin-bottom:10px;">Falcon Mamba has no KV cache. The SSM compresses all past context into a fixed-size recurrent state that is updated at each step, independent of how far back the sequence stretches. This yields two concrete guarantees: peak CUDA memory does not increase with sequence length, and token generation time remains constant from token 1 to token 130,000+. Both properties are demonstrated empirically at up to 130K tokens on an H100 GPU.</p>
+            <p>A practical consequence: Falcon Mamba fits on a single A10 24GB GPU for sequences that would cause a Transformer of equivalent parameter count to OOM. This opens deployment scenarios &mdash; long-document processing, streaming, embedded inference &mdash; that are structurally inaccessible to attention-based models at the same memory budget.</p>
+          </div>
+
+          <!-- Callout 3: Stable training techniques -->
+          <div style="background:var(--accent-light);border-left:3px solid var(--accent);border-radius:0 8px 8px 0;padding:20px 24px;margin:24px 0;">
+            <p style="font-family:var(--font-sans);font-size:0.73rem;font-weight:600;letter-spacing:0.09em;text-transform:uppercase;color:var(--accent);margin-bottom:6px;">Training Stability</p>
+            <h3 style="font-family:var(--font-serif);font-size:1.1rem;font-weight:600;margin-bottom:12px;">RMS Normalization &amp; Data Curriculum for Stable SSM Training at Scale</h3>
+            <p style="margin-bottom:10px;">Scaling pure SSMs to 7B parameters and 5.8 trillion tokens is non-trivial. Without attention's built-in gradient routing, SSMs are more susceptible to instability in the early stages of training and when data quality shifts abruptly. Falcon Mamba addresses this with two targeted modifications: additional RMS normalization layers inserted within each Mamba block to stabilize activations, and a training data curriculum that reserves a high-quality curated mixture for the final stage of training rather than distributing it uniformly.</p>
+            <p>The base training corpus draws primarily from RefinedWeb, supplemented with high-quality technical and code data. In the final training stage, the data mixture is enriched with curated high-quality sources, concentrating the most informative signal at the end of the run when the model's representational capacity is most developed.</p>
+          </div>
+        </div>
+
+        <hr class="project-divider">
+
+        <!-- Highlights -->
+        <div class="project-section">
+          <h2>Highlights</h2>
+          <ul class="highlights-list">
+            <li>First pure SSM to match leading Transformer 7B models: surpasses Mistral 7B, Llama 3.1-8B, Falcon2-11B; matches Gemma 7B.</li>
+            <li>Best-performing pure SSM in the literature at release, outperforming RecurrentGemma 9B and all RWKV-v6 variants.</li>
+            <li>LLM Leaderboard v1: ARC 62.03, HellaSwag 80.82, MMLU 62.11, Winogrande 73.64, GSM8K 52.54, average 64.09.</li>
+            <li>Constant peak GPU memory regardless of sequence length &mdash; no KV cache, no memory scaling problem.</li>
+            <li>Constant token generation throughput verified up to 130K tokens on H100; fits on a single A10 24GB GPU.</li>
+            <li>Trained on 5.8 trillion tokens with a staged data curriculum; final stage enriched with high-quality curated data.</li>
+            <li>Extra RMS normalization layers enable stable training of pure Mamba at 7B scale.</li>
+            <li>Empirical foundation that de-risked SSM integration in the subsequent <a href="../projects/falcon-h1.html">Falcon-H1</a> hybrid family.</li>
+          </ul>
+        </div>
+
+        <hr class="project-divider">
+
+        <!-- Citation -->
+        <div class="project-section">
+          <h2>Citation</h2>
+          <div class="bibtex-block" data-bibtex="falcon-mamba"></div>
+        </div>
+
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2025 Jingwei Zuo. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../data/bibtex.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>
