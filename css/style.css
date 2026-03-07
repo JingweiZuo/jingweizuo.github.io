@@ -1055,7 +1055,7 @@ section + section {
     padding-bottom: 44px;
   }
 
-  /* Mobile nav */
+  /* Mobile nav — opaque background */
   .nav-toggle { display: block; }
 
   .nav-links {
@@ -1064,9 +1064,7 @@ section + section {
     left: 0; right: 0;
     flex-direction: column;
     gap: 0;
-    background: rgba(250, 250, 248, 0.97);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    background: var(--bg);
     border-bottom: 1px solid var(--border);
     padding: 8px 0;
     transform: translateY(-100%);
@@ -1098,6 +1096,11 @@ section + section {
   .hero-text h1 { font-size: 1.65rem; text-align: center; }
   .name-pronunciation { text-align: center; }
   .social-links { justify-content: center; }
+  .social-link { padding: 7px 16px; }
+
+  /* Larger touch targets for pill links */
+  .pill-link,
+  .cite-toggle { padding: 6px 14px; font-size: 0.78rem; }
 
   /* Project cards stacked */
   .project-card {
@@ -1105,12 +1108,15 @@ section + section {
   }
   .project-card-image { aspect-ratio: auto; }
   .project-card-body { padding: 20px; }
+  .project-card-desc { margin-bottom: 12px; }
 
-  /* News */
+  /* News — stacked layout */
   .news-item {
-    grid-template-columns: 76px 1fr;
-    gap: 12px;
+    grid-template-columns: 1fr;
+    gap: 2px;
+    padding: 12px 0;
   }
+  .news-date { font-size: 0.72rem; }
 
   /* Background stacked */
   .bg-split {
@@ -1123,11 +1129,18 @@ section + section {
 
   /* Project pages */
   .project-meta h1 { font-size: 1.45rem; }
+  .project-section > div[style] { padding: 16px 18px !important; }
+
+  /* BibTeX blocks — horizontal scroll instead of word-break */
+  .bibtex-block { font-size: 0.65rem; overflow-x: auto; word-break: normal; }
+  .card-bibtex-inner,
+  .pub-bibtex-inner { font-size: 0.63rem; }
 
   /* Disable justify on narrow screens to avoid ugly word-spacing */
   body { text-align: left; }
   .hero-bio,
   .interests-prose,
+  .project-card-desc,
   .project-section p { text-align: left; }
 }
 
