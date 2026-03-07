@@ -1095,6 +1095,7 @@ section + section {
   .hero-photo .initials { font-size: 2.4rem; }
   .hero-text h1 { font-size: 1.65rem; text-align: center; }
   .name-pronunciation { text-align: center; }
+  .hero-bio { text-align: left; }
   .social-links { justify-content: center; }
   .social-link { padding: 7px 16px; }
 
