@@ -54,7 +54,7 @@ body {
   line-height: 1.65;
   color: var(--text-primary);
   background: var(--bg);
-  text-align: left;
+  text-align: justify;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -422,6 +422,7 @@ section + section {
   color: var(--text-secondary);
   line-height: 1.6;
   margin-bottom: 16px;
+  text-align: left;
 }
 
 .project-links {
@@ -934,6 +935,9 @@ section + section {
   margin-bottom: 12px;
 }
 
+/* Left-align text inside callout boxes (narrow containers where justify creates gaps) */
+.project-section > div[style] p { text-align: left; }
+
 .project-section figure {
   margin: 24px 0;
 }
@@ -1131,6 +1135,9 @@ section + section {
   /* Project pages */
   .project-meta h1 { font-size: 1.45rem; }
   .project-section > div[style] { padding: 16px 18px !important; }
+
+  /* Disable justify on narrow screens */
+  body { text-align: left; }
 
   /* BibTeX blocks — horizontal scroll instead of word-break */
   .bibtex-block { font-size: 0.65rem; overflow-x: auto; word-break: normal; }
