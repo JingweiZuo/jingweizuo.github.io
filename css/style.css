@@ -1095,7 +1095,8 @@ section + section {
   }
   .hero-photo { width: 150px; height: 150px; }
   .hero-photo .initials { font-size: 2.4rem; }
-  .hero-text h1 { font-size: 1.65rem; }
+  .hero-text h1 { font-size: 1.65rem; text-align: center; }
+  .name-pronunciation { text-align: center; }
   .social-links { justify-content: center; }
 
   /* Project cards stacked */
