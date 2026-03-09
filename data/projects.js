@@ -48,7 +48,7 @@ window.PROJECTS = {
       { label: "Models", url: "https://huggingface.co/collections/tiiuae/falcon-edge-series-6804fd13344d6d8a8fa71130" },
       { label: "Blog", url: "https://falcon-lm.github.io/blog/falcon-edge/" }
     ],
-    hasCite: false
+    hasCite: true
   },
 
   "falcon-3": {

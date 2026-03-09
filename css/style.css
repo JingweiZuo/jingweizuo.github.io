@@ -91,7 +91,7 @@ ul, ol { list-style: none; }
 }
 
 section {
-  padding: 56px 0;
+  padding: 48px 0;
 }
 
 section + section {
@@ -210,8 +210,8 @@ section + section {
    4. Hero / About
    ---------------------------------------------------------- */
 .hero {
-  padding-top: calc(var(--nav-height) + 56px);
-  padding-bottom: 56px;
+  padding-top: calc(var(--nav-height) + 48px);
+  padding-bottom: 48px;
 }
 
 .hero-inner {
@@ -422,6 +422,7 @@ section + section {
   color: var(--text-secondary);
   line-height: 1.6;
   margin-bottom: 16px;
+  text-align: left;
 }
 
 .project-links {
@@ -571,7 +572,7 @@ section + section {
 
 .news-item {
   display: grid;
-  grid-template-columns: 96px 1fr;
+  grid-template-columns: 104px 1fr;
   gap: 20px;
   padding: 11px 0;
   border-bottom: 1px solid var(--border-light);
@@ -649,7 +650,7 @@ section + section {
   background: var(--surface);
   border: 1px solid var(--border-light);
   border-radius: 8px;
-  margin-bottom: 10px;
+  margin-bottom: 14px;
 }
 .pub-item:last-child { margin-bottom: 0; }
 
@@ -765,7 +766,7 @@ section + section {
 .interests-prose {
   font-size: 0.88rem;
   color: var(--text-secondary);
-  line-height: 1.7;
+  line-height: 1.75;
   margin-bottom: 16px;
 }
 
@@ -934,6 +935,9 @@ section + section {
   margin-bottom: 12px;
 }
 
+/* Left-align text inside callout boxes (narrow containers where justify creates gaps) */
+.project-section > div[style] p { text-align: left; }
+
 .project-section figure {
   margin: 24px 0;
 }
@@ -1055,7 +1059,7 @@ section + section {
     padding-bottom: 44px;
   }
 
-  /* Mobile nav */
+  /* Mobile nav — opaque background */
   .nav-toggle { display: block; }
 
   .nav-links {
@@ -1064,9 +1068,7 @@ section + section {
     left: 0; right: 0;
     flex-direction: column;
     gap: 0;
-    background: rgba(250, 250, 248, 0.97);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    background: var(--bg);
     border-bottom: 1px solid var(--border);
     padding: 8px 0;
     transform: translateY(-100%);
@@ -1095,8 +1097,15 @@ section + section {
   }
   .hero-photo { width: 150px; height: 150px; }
   .hero-photo .initials { font-size: 2.4rem; }
-  .hero-text h1 { font-size: 1.65rem; }
+  .hero-text h1 { font-size: 1.65rem; text-align: center; }
+  .name-pronunciation { text-align: center; }
+  .hero-bio { text-align: left; }
   .social-links { justify-content: center; }
+  .social-link { padding: 7px 16px; }
+
+  /* Larger touch targets for pill links */
+  .pill-link,
+  .cite-toggle { padding: 6px 14px; font-size: 0.78rem; }
 
   /* Project cards stacked */
   .project-card {
@@ -1104,12 +1113,15 @@ section + section {
   }
   .project-card-image { aspect-ratio: auto; }
   .project-card-body { padding: 20px; }
+  .project-card-desc { margin-bottom: 12px; }
 
-  /* News */
+  /* News — stacked layout */
   .news-item {
-    grid-template-columns: 76px 1fr;
-    gap: 12px;
+    grid-template-columns: 1fr;
+    gap: 2px;
+    padding: 12px 0;
   }
+  .news-date { font-size: 0.72rem; }
 
   /* Background stacked */
   .bg-split {
@@ -1122,12 +1134,16 @@ section + section {
 
   /* Project pages */
   .project-meta h1 { font-size: 1.45rem; }
+  .project-section > div[style] { padding: 16px 18px !important; }
 
-  /* Disable justify on narrow screens to avoid ugly word-spacing */
+  /* Disable justify on narrow screens */
   body { text-align: left; }
-  .hero-bio,
-  .interests-prose,
-  .project-section p { text-align: left; }
+
+  /* BibTeX blocks — horizontal scroll instead of word-break */
+  .bibtex-block { font-size: 0.65rem; overflow-x: auto; word-break: normal; }
+  .card-bibtex-inner,
+  .pub-bibtex-inner { font-size: 0.63rem; }
+
 }
 
 
