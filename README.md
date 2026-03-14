@@ -2,7 +2,7 @@
 
 Personal academic website for Jingwei Zuo, Principal Researcher at TII.
 
-Static HTML + CSS + JS. No build tools. No frameworks.
+Static HTML + CSS + JS. Blog uses a lightweight Python build step (Markdown + LaTeX → HTML).
 
 ## Local Preview
 
@@ -35,6 +35,27 @@ Edit the `<section id="about">` block in `index.html`.
 1. Find the correct year group in `<section id="publications">` in `index.html`.
 2. Add a new `.pub-item` div following the existing format.
 3. If the year doesn't exist yet, add a new `.publications-year` block.
+
+### Add a blog post
+
+1. Create a new `.md` file in `blog/posts/` named `YYYY-MM-DD-slug.md`.
+2. Add YAML frontmatter at the top:
+   ```yaml
+   ---
+   title: "Your Post Title"
+   date: 2026-03-13
+   summary: "One-line description for the listing page."
+   tags: [Tag1, Tag2]
+   ---
+   ```
+3. Write content in Markdown. Use `$...$` for inline math and `$$...$$` for display math (rendered by KaTeX). Use fenced code blocks for syntax-highlighted code.
+4. Run the build script:
+   ```bash
+   pip3 install markdown pyyaml pygments   # one-time setup
+   python3 build_blog.py
+   ```
+5. This generates `blog/<slug>.html` and updates `blog/index.html`.
+6. To show the Blog link in the navbar, uncomment it in `index.html`.
 
 ### Add a news item
 
@@ -80,8 +101,19 @@ site/
 │   ├── falcon-mamba.html   ← Skeleton
 │   ├── learnable-multiplier.html ← Skeleton
 │   └── e2lm.html           ← Skeleton
-├── css/style.css           ← All styles
-├── js/main.js              ← Nav toggle, news expand, scroll spy
+├── blog/
+│   ├── posts/              ← Markdown source files (not served)
+│   │   └── 2026-03-13-attention-math.md
+│   ├── index.html          ← Blog listing page (generated)
+│   ├── attention-math.html ← Individual post (generated)
+│   └── images/             ← Blog post images
+├── build_blog.py           ← Blog build script (Markdown+LaTeX → HTML)
+├── css/
+│   ├── style.css           ← All styles
+│   └── pygments.css        ← Syntax highlighting (generated)
+├── js/
+│   ├── main.js             ← Nav toggle, news expand, scroll spy
+│   └── blog.js             ← TOC sidebar, sticky title, reading progress
 ├── images/
 │   ├── avatar.jpg          ← Replace with headshot
 │   └── projects/           ← Project hero images (800×400)
