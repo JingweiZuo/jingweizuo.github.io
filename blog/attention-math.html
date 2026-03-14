@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Mathematics of Attention Mechanisms — Jingwei Zuo</title>
+  <meta name="description" content="A walkthrough of the core equations behind Transformer attention, from scaled dot-product to multi-head, with intuition for why each piece matters.">
+
+  <meta property="og:title" content="The Mathematics of Attention Mechanisms — Jingwei Zuo">
+  <meta property="og:description" content="A walkthrough of the core equations behind Transformer attention, from scaled dot-product to multi-head, with intuition for why each piece matters.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.jingweizuo.com/blog/attention-math.html">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Inter:wght@300;400;450;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/pygments.css">
+
+  <!-- KaTeX -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/contrib/auto-render.min.js"
+    onload="renderMathInElement(document.body, {
+      delimiters: [
+        {left: '$$', right: '$$', display: true},
+        {left: '$', right: '$', display: false}
+      ],
+      throwOnError: false
+    });"></script>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-brand">Jingwei Zuo</a>
+      <a href="index.html" class="nav-back">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2" stroke-linecap="round"
+             stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+        All Posts
+      </a>
+    </div>
+  </nav>
+
+  <!-- Sticky title bar (shown by blog.js on scroll) -->
+  <div class="sticky-title-bar" aria-hidden="true">
+    <div class="sticky-title-inner">
+      <span class="sticky-title-text">The Mathematics of Attention Mechanisms</span>
+    </div>
+    <div class="reading-progress-bar"></div>
+  </div>
+
+  <main>
+    <article class="project-page blog-post">
+      <div class="container">
+
+        <!-- Table of Contents sidebar (populated by blog.js) -->
+        <nav class="blog-toc" aria-label="Table of contents"></nav>
+
+        <div class="blog-post-header">
+          <h1>The Mathematics of Attention Mechanisms</h1>
+          <div class="blog-post-meta">
+            <time datetime="2026-03-13">March 13, 2026</time>
+            <span class="blog-tag">Transformers</span> <span class="blog-tag">Attention</span> <span class="blog-tag">LLM</span>
+          </div>
+        </div>
+
+        <hr class="project-divider">
+
+        <div class="project-section blog-content">
+          <h2 id="scaled-dot-product-attention">Scaled Dot-Product Attention</h2>
+<p>The fundamental building block of the Transformer is <strong>scaled dot-product attention</strong>. Given a set of queries <span class="math-inline">$Q$</span>, keys <span class="math-inline">$K$</span>, and values <span class="math-inline">$V$</span>, attention computes:</p>
+<div class="math-display">$$
+\text{Attention}(Q, K, V) = \text{softmax}\!\left(\frac{QK^\top}{\sqrt{d_k}}\right) V
+$$</div>
+<p>where <span class="math-inline">$d_k$</span> is the dimension of the key vectors. The scaling factor <span class="math-inline">$\frac{1}{\sqrt{d_k}}$</span> prevents the dot products from growing too large in magnitude, which would push the softmax into regions with extremely small gradients.</p>
+<h2 id="why-scale-by-sqrtd_k">Why Scale by <span class="math-inline">$\sqrt{d_k}$</span>?</h2>
+<p>Consider two random vectors <span class="math-inline">$q, k \in \mathbb{R}^{d_k}$</span> with entries drawn i.i.d. from <span class="math-inline">$\mathcal{N}(0, 1)$</span>. Their dot product <span class="math-inline">$q \cdot k = \sum_{i=1}^{d_k} q_i k_i$</span> has:</p>
+<ul>
+<li><strong>Mean</strong>: <span class="math-inline">$\mathbb{E}[q \cdot k] = 0$</span></li>
+<li><strong>Variance</strong>: <span class="math-inline">$\text{Var}(q \cdot k) = d_k$</span></li>
+</ul>
+<p>So the standard deviation grows as <span class="math-inline">$\sqrt{d_k}$</span>. Dividing by this factor normalizes the logits to unit variance, keeping the softmax well-behaved regardless of the model dimension.</p>
+<h2 id="multi-head-attention">Multi-Head Attention</h2>
+<p>Rather than computing a single attention function, multi-head attention runs <span class="math-inline">$h$</span> parallel attention heads, each with its own learned projections:</p>
+<div class="math-display">$$
+\text{MultiHead}(Q, K, V) = \text{Concat}(\text{head}_1, \ldots, \text{head}_h) W^O
+$$</div>
+<p>where each head is:</p>
+<div class="math-display">$$
+\text{head}_i = \text{Attention}(Q W_i^Q, K W_i^K, V W_i^V)
+$$</div>
+<p>with <span class="math-inline">$W_i^Q \in \mathbb{R}^{d_\text{model} \times d_k}$</span>, <span class="math-inline">$W_i^K \in \mathbb{R}^{d_\text{model} \times d_k}$</span>, <span class="math-inline">$W_i^V \in \mathbb{R}^{d_\text{model} \times d_v}$</span>, and <span class="math-inline">$W^O \in \mathbb{R}^{hd_v \times d_\text{model}}$</span>.</p>
+<h2 id="code-example">Code Example</h2>
+<p>Here is a minimal PyTorch implementation of scaled dot-product attention:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">torch.nn.functional</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">F</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">scaled_dot_product_attention</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span> <span class="n">K</span><span class="p">,</span> <span class="n">V</span><span class="p">,</span> <span class="n">mask</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="n">d_k</span> <span class="o">=</span> <span class="n">Q</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">scores</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span> <span class="n">K</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">))</span> <span class="o">/</span> <span class="n">d_k</span> <span class="o">**</span> <span class="mf">0.5</span>
+    <span class="k">if</span> <span class="n">mask</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">scores</span> <span class="o">=</span> <span class="n">scores</span><span class="o">.</span><span class="n">masked_fill</span><span class="p">(</span><span class="n">mask</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">float</span><span class="p">(</span><span class="s1">&#39;-inf&#39;</span><span class="p">))</span>
+    <span class="n">weights</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">softmax</span><span class="p">(</span><span class="n">scores</span><span class="p">,</span> <span class="n">dim</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">torch</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">weights</span><span class="p">,</span> <span class="n">V</span><span class="p">)</span>
+</code></pre></div>
+
+<h2 id="the-softmax-bottleneck">The Softmax Bottleneck</h2>
+<p>One limitation of standard attention is the <strong>softmax bottleneck</strong>: the attention matrix <span class="math-inline">$A = \text{softmax}(QK^\top / \sqrt{d_k})$</span> is constrained to be a row-stochastic matrix of rank at most <span class="math-inline">$d_k$</span>. When the true target distribution requires a higher-rank context mapping, softmax attention may be unable to represent it. This is one motivation for exploring alternative architectures like State Space Models (SSMs).</p>
+<h2 id="connection-to-hybrid-architectures">Connection to Hybrid Architectures</h2>
+<p>In hybrid models like Falcon-H1, attention heads and SSM heads operate in parallel. The attention heads compute:</p>
+<div class="math-display">$$
+h_\text{attn} = \text{Attention}(QW^Q, KW^K, VW^V)
+$$</div>
+<p>while the SSM heads process the same hidden state through a state-space recurrence:</p>
+<div class="math-display">$$
+x_t = \bar{A} x_{t-1} + \bar{B} u_t, \quad y_t = C x_t
+$$</div>
+<p>The outputs are combined before the feed-forward layer, allowing the model to leverage both precise in-context retrieval (attention) and efficient sequence compression (SSM) at every layer.</p>
+        </div>
+
+        <hr class="project-divider">
+
+        <!-- Comments (giscus) -->
+        <section class="blog-comments" id="comments">
+          <h2 class="comments-heading">Comments</h2>
+          <script src="https://giscus.app/client.js"
+            data-repo="JingweiZuo/jingweizuo.github.io"
+            data-repo-id="MDEwOlJlcG9zaXRvcnkxNTAxNzg1NzI="
+            data-category="General"
+            data-category-id="DIC_kwDOCPOLDM4C4V3G"
+            data-mapping="pathname"
+            data-strict="0"
+            data-reactions-enabled="1"
+            data-emit-metadata="0"
+            data-input-position="top"
+            data-theme="light"
+            data-lang="en"
+            data-loading="lazy"
+            crossorigin="anonymous"
+            async>
+          </script>
+        </section>
+
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 Jingwei Zuo. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script defer src="../js/blog.js"></script>
+</body>
+</html>
