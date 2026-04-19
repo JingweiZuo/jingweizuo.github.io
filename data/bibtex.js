@@ -59,6 +59,13 @@ window.BIBTEX = {
   author={Yagoubi, Mouadh and Dahou, Yasser and Mokeddem, Billel and Belkada, Younes and Le-Khac, Phuc H and Boussaha, Basma El Amel and Alami, Reda and Zuo, Jingwei and Marsili, Damiano and Farooq, Mugariya and others},\n\
   journal={arXiv preprint arXiv:2506.07731},\n\
   year={2025}\n\
+}",
+
+  "memorization-window": "@inproceedings{zuo2026train,\n\
+  title={Train Smarter, Not Longer: Memorization-Guided Data Reuse for Efficient LLM Training},\n\
+  author={Zuo, Jingwei and Chahed, Ilyas and Velikanov, Maksim and Zeng, Cong and Rhaiem, Dhia Eddine and Balsebre, Pasquale and Kumar, Abhay and Belkada, Younes and Hacid, Hakim},\n\
+  booktitle={ICLR Workshop on Navigating and Curating Data for Foundation Models (DATA-FM)},\n\
+  year={2026}\n\
 }"
 
 };
