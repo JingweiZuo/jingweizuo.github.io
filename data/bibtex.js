@@ -17,10 +17,10 @@ window.BIBTEX = {
   year={2026},\n\
   }\n\
 \n\
-@inproceedings{zuo2026train,\n\
+@article{zuo2026train,\n\
   title={Train Smarter, Not Longer: Memorization-Guided Data Reuse for Efficient LLM Training},\n\
-  author={Zuo, Jingwei and Chahed, Ilyas and Velikanov, Maksim and Zeng, Cong and Rhaiem, Dhia Eddine and Balsebre, Pasquale and Kumar, Abhay and Belkada, Younes and Hacid, Hakim},\n\
-  booktitle={3rd Workshop on Navigating and Addressing Data Problems for Foundation Models (DATA-FM), ICLR 2026},\n\
+  author={Zuo, Jingwei and Zeng, Cong and Chahed, Ilyas and Velikanov, Maksim and Rhaiem, Dhia Eddine and Balsebre, Pasquale and Kumar, Abhay and Belkada, Younes and Hacid, Hakim},\n\
+  journal={arXiv preprint arXiv:2607.04969},\n\
   year={2026}\n\
 }\n\
 \n\
@@ -68,10 +68,10 @@ window.BIBTEX = {
   year={2025}\n\
 }",
 
-  "memorization-window": "@inproceedings{zuo2026train,\n\
+  "memorization-window": "@article{zuo2026train,\n\
   title={Train Smarter, Not Longer: Memorization-Guided Data Reuse for Efficient LLM Training},\n\
-  author={Zuo, Jingwei and Chahed, Ilyas and Velikanov, Maksim and Zeng, Cong and Rhaiem, Dhia Eddine and Balsebre, Pasquale and Kumar, Abhay and Belkada, Younes and Hacid, Hakim},\n\
-  booktitle={3rd Workshop on Navigating and Addressing Data Problems for Foundation Models (DATA-FM), ICLR 2026},\n\
+  author={Zuo, Jingwei and Zeng, Cong and Chahed, Ilyas and Velikanov, Maksim and Rhaiem, Dhia Eddine and Balsebre, Pasquale and Kumar, Abhay and Belkada, Younes and Hacid, Hakim},\n\
+  journal={arXiv preprint arXiv:2607.04969},\n\
   year={2026}\n\
 }"
 
