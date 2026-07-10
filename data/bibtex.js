@@ -17,6 +17,13 @@ window.BIBTEX = {
   year={2026},\n\
   }\n\
 \n\
+@inproceedings{zuo2026train,\n\
+  title={Train Smarter, Not Longer: Memorization-Guided Data Reuse for Efficient LLM Training},\n\
+  author={Zuo, Jingwei and Chahed, Ilyas and Velikanov, Maksim and Zeng, Cong and Rhaiem, Dhia Eddine and Balsebre, Pasquale and Kumar, Abhay and Belkada, Younes and Hacid, Hakim},\n\
+  booktitle={3rd Workshop on Navigating and Addressing Data Problems for Foundation Models (DATA-FM), ICLR 2026},\n\
+  year={2026}\n\
+}\n\
+\n\
 @article{zuo2025falcon,\n\
   title={Falcon-h1: A family of hybrid-head language models redefining efficiency and performance},\n\
   author={Zuo, Jingwei and Velikanov, Maksim and Chahed, Ilyas and Belkada, Younes and Rhayem, Dhia Eddine and Kunsch, Guillaume and Hacid, Hakim and Yous, Hamza and Farhat, Brahim and Khadraoui, Ibrahim and others},\n\
